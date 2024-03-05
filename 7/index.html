@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz rejestracyjny</title>
+</head>
+<body>
+    Formularz rejestracyjny:
+    <form method="post" enctype="text/plain" action="index.php">
+        <table>
+            <tr>
+                <td>
+                    Podaj imię:
+                </td>
+                <td>
+                    <input type="text" name="imie" placeholder="Jan" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Podaj nazwisko:
+                </td>
+                <td>
+                    <input type="text" name="nazwisko" placeholder="Kowalski" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nr telefonu:
+                </td>
+                <td>
+                    <input type="tel" pattern="^\d{3}-\d{3}-\d{3}$" placeholder="000-000-000">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Podaj login:
+                </td>
+                <td>
+                    <input type="text" name="login" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Podaj hasło:
+                </td>
+                <td>
+                    <input type="password" name="haslo" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="reset" value="Wyczyść dane">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Wyślij dane">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
