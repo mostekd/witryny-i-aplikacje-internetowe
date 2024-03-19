@@ -1,0 +1,32 @@
+table{
+    margin-left: 560px;
+    margin-right: auto;
+    align-items: center;
+    width: 760px;
+    display: flex;
+    justify-content: center;
+    border: 10px solid blue;
+}
+
+img{
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+}
+
+td{
+    border: 2px solid #000;
+}
+
+.tekst{
+    color: rgb(0, 102, 255);
+    text-align: center;
+}
+
+.nazwa{
+    text-align: center;
+}
+
+.wiersz{
+    background-color: yellow;
+}
