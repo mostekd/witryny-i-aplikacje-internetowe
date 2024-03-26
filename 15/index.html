@@ -7,10 +7,26 @@
 </head>
 <body>
     <script>
-        var liczba_1=prompt("Podaj pierwszą licbę: ")
-        var liczba_2=prompt("Podaj drugą licbę: ")
+        var liczba_1=parseInt(prompt("Dodawanie <br> Podaj pierwszą licbę: "))
+        var liczba_2=Number(prompt("Dodawanie <br> Podaj drugą licbę: "))
         var wynik=liczba_1+liczba_2
-        document.write("wynik "+wynik+"")
+        document.write("wynik dodawania "+wynik+"")
+
+        var liczba_3=parseInt(prompt("Odejmowanie <br> Podaj pierwszą licbę: "))
+        var liczba_4=Number(prompt("Odejmowanie <br> Podaj drugą licbę: "))
+        var wynik2=liczba_3-liczba_4
+        document.write("<br>wynik odejmowania "+wynik2+"")
+
+        var liczba_5=parseInt(prompt("Mnożenie <br> Podaj pierwszą licbę: "))
+        var liczba_6=Number(prompt("Mnożenie <br> Podaj drugą licbę: "))
+        var wynik3=liczba_5*liczba_6
+        document.write("<br>wynik mnożenia "+wynik3+"")
+
+        var liczba_7=parseInt(prompt("Dzielenie <br> Podaj pierwszą licbę: "))
+        var liczba_8=Number(prompt("Dzielenie <br> Podaj drugą licbę: "))
+        var wynik4=liczba_7/liczba_8
+        document.write("<br>wynik dzielenia "+wynik4+"")
+        
     </script>
 </body>
 </html>
