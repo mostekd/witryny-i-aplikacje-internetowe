@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tworzenie tabel za pomocą pętli</title>
+    <style>
+        table, tr, td{
+            border: 1px solid blue;
+        }
+        table{
+            width:400px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var i, j, a;
+        document.write("<table>");
+        for(j = 1; j <= 3; j++){ 
+            document.write("<tr>");
+            for(i = 1; i <= 10; i++){ 
+                a = parseInt(Math.random() * 100 + 1);
+                document.write("<td>" + a + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+</html>
