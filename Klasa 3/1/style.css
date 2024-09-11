@@ -1,0 +1,61 @@
+article{
+    border: 2px solid #111111;
+    width: 80%;
+    margin: auto;
+}
+ 
+header {
+    border: 2px solid #111111;
+    height: 100px;
+    text-align: center;
+    margin: 5px;
+}
+ 
+nav {
+    border: 2px solid #111111;;
+    height: 55px;
+    text-align: center;
+    margin: 5px;
+}
+ 
+aside {
+    border: 2px solid #111111;;
+    height: 400px;
+    width: 45%;
+    text-align: center;
+    float: left;
+    margin: 5px;
+}
+ 
+section {
+    border: 2px solid #111111;;
+    height: 400px;
+    width: 53%;
+    margin: 5px;
+    text-align: center;
+    float: left;
+}
+ 
+footer {
+    border: 2px solid #111111;;
+    height: 65px;
+    text-align: center;
+    margin: 5px;
+    clear: both;
+}
+ 
+#blok1,#blok2 {
+    border: 2px solid #111111;;
+    height: 40px;
+    width: 98%;
+    text-align: center;
+    margin: 5px;
+}
+ 
+#blok3 {
+    border: 2px solid #111111;;
+    height: 220px;
+    width: 98%;
+    text-align: center;
+    margin: 5px;
+}

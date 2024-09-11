@@ -1,0 +1,22 @@
+
+body{
+    display: flex;
+    align-items: center;
+}
+table {
+    border: 2px solid #111111;;
+    margin: 5px;
+}
+ 
+tr {
+    border: 2px solid #111111;;
+    margin: 5px;
+}
+ 
+td {
+    border: 2px solid #111111;;
+    margin: 5px;
+}
+th{
+    background-color: #0f0;
+}
