@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #klient, #adres, #kontakt{
+            width: 60%;
+            height: 400px;
+        }
+        #klient{
+            background-color: grey;
+        }
+        #adres{
+            display: none;
+            background-color: pink;
+        }
+        #kontakt{
+            display: none;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function klient(zd) {
+            zd.preventDefault()
+            document.getElementById("klient").style.display = "block";
+            document.getElementById("adres").style.display = "none";
+            document.getElementById("kontakt").style.display = "none";
+        }
+        function adres(zd) {
+            zd.preventDefault()
+            document.getElementById("klient").style.display = "none";
+            document.getElementById("adres").style.display = "block";
+            document.getElementById("kontakt").style.display = "none";
+        }
+        function kontakt(zd) {
+            zd.preventDefault()
+            document.getElementById("klient").style.display = "none";
+            document.getElementById("adres").style.display = "none";
+            document.getElementById("kontakt").style.display = "block";
+        }
+    </script>
+    <form name="formularz" id="formularz">
+        <button onclick="klient()">Klient</button>
+        <button onclick="adres(event)">Adres</button>
+        <button onclick="kontakt(event)">Kontakt</button>
+    </form>
+    <section id="klient">Klient</section>
+    <section id="adres">Adres</section>
+    <section id="kontakt">Kontakt</section>
+</body>
+</html>
