@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="formularz">
+        <select id="color" onChange="zmien()">
+            <option>green</option>
+            <option>grey</option>
+            <option>orange</option>
+        </select>
+    </form>
+    <p id="akapit">To jest akapit</p>
+    <script>
+        function zmien(){
+            document.getElementById("akapit").style.color=document.getElementById("color").value;
+        }
+    </script>
+</body>
+</html>
