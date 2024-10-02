@@ -3,36 +3,32 @@
         const messageInput = document.querySelector('input');
         const messageText = messageInput.value.trim();
 
-        // Only proceed if the message is not empty
         if (messageText !== "") {
-            // Create a new message element
             const newMessage = document.createElement('div');
             newMessage.classList.add('message', 'right');
             
             // Create the avatar image
-            const avatar = document.createElement('img');
-            avatar.src = 'user2.jpg'; // Adjust the path for the user's avatar
-            avatar.alt = 'user avatar';
-            avatar.classList.add('avatar');
+            const avatar1 = document.createElement('img1');
+            avatar1.src = 'https://img.freepik.com/premium-zdjecie/mezczyzna-w-czarnej-koszuli-z-napisem-quote_1262781-47950.jpg';
+            avatar1.classList.add('avatar1');
+
+            const avatar2 = document.createElement('img2');
+            avatar2.src = 'https://img.freepik.com/premium-zdjecie/mezczyzna-w-czarnej-koszuli-z-napisem-quote_1262781-47950.jpg';
+            avatar2.classList.add('avatar2');
             
-            // Create the message text
             const text = document.createElement('div');
             text.classList.add('text');
             text.textContent = messageText;
 
-            // Append avatar and text to the new message div
-            newMessage.appendChild(avatar);
+            newMessage.appendChild(avatar1);
             newMessage.appendChild(text);
 
-            // Add the new message to the chat container
             document.querySelector('.chat-container').appendChild(newMessage);
 
-            // Clear the input field after sending the message
             messageInput.value = '';
         }
     });
 
-    // Optionally, allow sending the message with the Enter key
     document.querySelector('input').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             document.querySelector('button').click();
