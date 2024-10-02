@@ -5,20 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obrazek z ramką</title>
     <style>
-        /* Ustawienia dla obrazka bez ramki */
         #image {
             display: block;
             margin: 20px auto;
             transition: border 0.3s ease;
         }
 
-        /* Ramka wokół obrazka po zaznaczeniu checkboxa */
         .bordered {
             border: 5px solid black;
-            padding: 5px; /* Margines między obrazkiem a ramką */
+            padding: 5px;
         }
 
-        /* Stylizacja checkboxa */
         .container {
             text-align: center;
             margin-top: 20px;
@@ -33,11 +30,9 @@
     </div>
 
     <script>
-        // Pobieramy element checkboxa i obrazka
         const checkbox = document.getElementById('toggleBorder');
         const image = document.getElementById('image');
 
-        // Funkcja, która dodaje lub usuwa klasę 'bordered' na obrazku w zależności od stanu checkboxa
         checkbox.addEventListener('change', function() {
             if (this.checked) {
                 image.classList.add('bordered');
