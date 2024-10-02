@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="formularz">
+        <input type="checkbox" id="ramka" onChange="zmien()">Ramka 
+    </form>
+    <img id="obrazek" src="https://sportstylestory.com/gfx/1697620764.8276.jpg" style="margin: 5px;">
+    <script>
+        function zmien(){
+            if (document.getElementById("ramka").checked)
+                document.getElementById("obrazek").style.border="2px blue solid";
+            else
+            document.getElementById("obrazek").style.border="none";
+        }
+    </script>
+</body>
+</html>
