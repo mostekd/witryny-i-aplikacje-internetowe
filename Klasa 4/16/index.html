@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kalkulator sumy towarów</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .item {
+                margin: 5px 0;
+            }
+            .total {
+                margin-top: 20px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Wybierz towary</h1>
+
+        <div class="item">
+            <input type="checkbox" class="product" data-price="10" id="chleb">
+            <label for="chleb">Chleb 10 zł</label>
+        </div>
+        <div class="item">
+            <input type="checkbox" class="product" data-price="3" id="cukier">
+            <label for="cukier">Cukier 3 zł</label>
+        </div>
+        <div class="item">
+            <input type="checkbox" class="product" data-price="2" id="maka">
+            <label for="maka">Mąka 2 zł</label>
+        </div>
+        <div class="item">
+            <input type="checkbox" class="product" data-price="2" id="sol">
+            <label for="sol">Sól 2 zł</label>
+        </div>
+        <div class="item">
+            <input type="checkbox" class="product" data-price="8" id="maslo">
+            <label for="maslo">Masło 8 zł</label>
+        </div>
+
+        <div class="total">
+            Suma: <span id="total">0</span> zł
+        </div>
+
+        <script>
+            const checkboxes = document.querySelectorAll('.product');
+            const totalElement = document.getElementById('total');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    let total = 0;
+                    checkboxes.forEach(item => {
+                        if (item.checked) {
+                            total += parseFloat(item.getAttribute('data-price'));
+                        }
+                    });
+                    totalElement.textContent = total;
+                });
+            });
+        </script>
+    </body>
+</html>
