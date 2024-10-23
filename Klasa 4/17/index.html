@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Moje zakupy</h1>
+    <form>
+        <label>
+            <input type="checkbox" value="10" id="chleb" onchange="suma(this)">Chleb 10zł
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" value="9" id="maslo" onchange="suma(this)">Masło 9zł
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" value="3" id="sol" onchange="suma(this)">Sól 3zł
+        </label>
+        <br>
+    </form>
+    <p id="wynik">Suma 0</p>
+    <script>
+        let s=0;
+        function suma(produkt){
+            if(produkt.checked){
+                s=s+parseInt(produkt.value);
+                document.getElementById("wynik").innerHTML="Suma"+s;
+            }
+            else{
+                s=s-parseInt(produkt.value);
+                document.getElementById("wynik").innerHTML="Suma"+s;
+            }
+        }
+    </script>
+</body>
+</html>
