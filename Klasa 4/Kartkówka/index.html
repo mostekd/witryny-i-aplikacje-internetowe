@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kalkulator sumy produktów</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .item {
+                margin: 5px 0;
+            }
+            .total {
+                margin-top: 20px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Wybierz produkty:</h1>
+        <div class="item">
+            <input type="checkbox" class="product" data-price="10000" id="komputer">
+            <label for="komputer">Komputer 10000 zł</label>
+        </div>
+        <div class="item">
+            <input type="checkbox" class="product" data-price="378" id="sluchawki">
+            <label for="sluchawki">Słychawki 378 zł</label>
+        </div>
+        <div class="item">
+            <input type="checkbox" class="product" data-price="254" id="myszka">
+            <label for="myszka">Myszka 254 zł</label>
+        </div>
+        <div class="item">
+            <input type="checkbox" class="product" data-price="184" id="klawiatura">
+            <label for="klawiatura">Klawiatura 184 zł</label>
+        </div>
+        <div class="item">
+            <input type="checkbox" class="product" data-price="890" id="monitor">
+            <label for="monitor">Monitor 890 zł</label>
+        </div>
+        <div class="total">
+            Suma: <span id="total">0</span> zł
+        </div>
+        <script>
+            const checkboxes = document.querySelectorAll('.product');
+            const totalElement = document.getElementById('total');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    let total = 0;
+                    checkboxes.forEach(item => {
+                        if (item.checked) {
+                            total += parseFloat(item.getAttribute('data-price'));
+                        }
+                    });
+                    totalElement.textContent = total;
+                });
+            });
+        </script>
+    </body>
+</html>
