@@ -5,6 +5,32 @@ section {
     margin: 0;
     padding: 0;
 }
+.section1 {
+    display: flex;
+}
+.section2 {
+    background-color: #AED581; 
+    width: 200px; 
+    height: 100px; 
+    margin: 7px; 
+    border: 1px solid #7DA453;
+}
+.section2:hover {
+    background-color: #7DA453;
+    color: #fff;
+}
+.div1 {
+    width: 40%; 
+    background-color: #7DA453; 
+    color: white; 
+    height: 120px;
+}
+.div2 {
+    width: 20%; 
+    background-color: #7DA453; 
+    color: white; 
+    height: 120px;
+}
 h5 {
     text-align: center;
 }

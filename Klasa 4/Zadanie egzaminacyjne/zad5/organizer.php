@@ -29,30 +29,30 @@
         <link rel="stylesheet" href="styl5.css">
     </head>
     <body>
-        <section style="display: flex;">
-            <div style="width: 40%; background-color: #7DA453; color: white; height: 120px;">
+        <section class="section1">
+            <div class="div1">
                 <h1>Organizer: SIERPIEŃ</h1>
             </div>
-            <div style="width: 40%; background-color: #7DA453; color: white; height: 120px;">
+            <div class="div1">
                 <form method="POST">
                     <label for="wpis">Zapisz wydarzenie:</label>
                     <input type="text" name="wpis" id="wpis">
                     <button type="submit">OK</button>
                 </form>
             </div>
-            <div style="width: 20%; background-color: #7DA453; color: white; height: 120px;">
+            <div class="div2">
                 <img src="logo2.png" alt="sierpień" width="120" height="120">
             </div>
         </section>
         <main>
             <?php foreach ($zadania as $zadanie): ?>
-                <section style="background-color: #AED581; width: 200px; height: 100px; margin: 7px; border: 1px solid #7DA453;">
-                    <h5 style="text-align: center;"><?= $zadanie['dataZadania'] ?></h5>
+                <section class="section2">
+                    <h5><?= $zadanie['dataZadania'] ?></h5>
                     <p><?= $zadanie['wpis'] ?></p>
                 </section>
             <?php endforeach; ?>
         </main>
-        <footer style=a"background-color: #7DA453; color: white; padding: 5px;">
+        <footer>
             <p>Stronę wykonał: 11</p>
         </footer>
     </body>
