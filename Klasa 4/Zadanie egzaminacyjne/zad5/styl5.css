@@ -9,6 +9,7 @@ section {
     display: flex;
 }
 .section2 {
+    float: left;
     background-color: #AED581; 
     width: 200px; 
     height: 100px; 
@@ -35,16 +36,11 @@ h5 {
     text-align: center;
 }
 footer {
+    clear: both;
     background-color: #7DA453;
     color: white;
     padding: 5px;
 }
 form {
     padding-top: 50px;
-}
-main {
-    display: grid; 
-    grid-template-columns: repeat(6, 1fr); 
-    gap: 10px; padding: 1
-    0px;
 }
