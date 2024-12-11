@@ -1,0 +1,4 @@
+SELECT `dataZadania`, `wpis`FROM `zadania` WHERE `miesiac` = 'sierpien';
+SELECT `miesiac`, `rok` FROM `zadania` WHERE `dataZadania` = '2020-07-07';
+SELECT `dataZadania` AS nazwa_miesiaca, COUNT(*) AS liczba_wpisow FROM zadania WHERE wpis LIKE 'Weterynarz%' GROUP BY `dataZadania`;
+UPDATE zadania SET wpis = 'Wycieczka: Zalew Mietkowski' WHERE dataZadania = '2020-08-09';
