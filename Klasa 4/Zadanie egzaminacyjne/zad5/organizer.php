@@ -53,7 +53,7 @@
             <?php endforeach; ?>
         </main>
         <footer style=a"background-color: #7DA453; color: white; padding: 5px;">
-            <p>Stronę wykonał: NUMER_ZDAJĄCEGO</p>
+            <p>Stronę wykonał: 11</p>
         </footer>
     </body>
 </html>
