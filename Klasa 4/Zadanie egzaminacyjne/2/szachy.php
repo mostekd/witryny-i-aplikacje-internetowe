@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <section class="naglowek">
+
+    </section>
+    <section class="lewy">
+
+    </section>
+    <section class="prawy">
+
+    </section>
+    <section class="stopka">
+        
+    </section>
 </body>
 </html>
