@@ -6,7 +6,7 @@ body{
     margin: 0;
 }
 
-#header{
+.header{
     background-color: #ffd966;
     color: white;
     padding: 20px;
@@ -14,14 +14,14 @@ body{
     text-shadow: 5px 5px 10px black;
 }
 
-#left{
+.left{
     width: 25%;
     height: 450px;
     float: left;
     background-color: #ffd966;
 }
 
-#right{
+.right{
     width: 75%;
     float: left;
     height: 450px;
@@ -30,7 +30,7 @@ body{
     background-color: #c5e0b4;
 }
 
-#footer{
+.footer{
     background-color: #ffd966;
     color: white;
     padding: 20px;

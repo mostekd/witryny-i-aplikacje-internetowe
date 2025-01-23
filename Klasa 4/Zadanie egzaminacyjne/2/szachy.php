@@ -34,10 +34,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section id="header">
+    <header class="header">
         <h2><b>Koło szachowe gambit piona</b></h2>
-    </section>
-    <section id="left">
+    </header>
+    <nav class="left">
         <h4>Polecane linki</h4>
         <ol>
             <li><a href="./kwerendy/kw1.png">kwerenda1</a></li>
@@ -46,8 +46,8 @@
             <li><a href="./kwerendy/kw4.png"">kwerenda3</a></li>
         </ol>
         <img src="./logo.png" alt="Logo koła">
-    </section>
-    <section id="right">
+    </nav>
+    <main class="right">
         <h3>Najlepsi gracze naszego koła</h3>
         <?php
             fetchPlayers($conn);
@@ -76,9 +76,9 @@
         }
         ?>
         <p>Legenda: AM - Absolutny Mistrz, SM - Szkolny Mistrz, PM - Mistrz Poziomu, KM - Mistrz Klasowy</p>
-    </section>
-    <section id="footer">
+    </main>
+    <footer class="footer">
         <p>Stronę wykonał: 11</p>
-    </section>
+    </footer>
 </body>
 </html>
