@@ -4,13 +4,14 @@ $username = "root";
 $password = "";
 $dbname = "szachy";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 function fetchPlayers($conn) {
+    $conn = new mysqli("localhost", "root", "", "szachy");
     $query = "SELECT pseudonim, tytul, ranking, klasa FROM zawodnicy ORDER BY ranking DESC LIMIT 10";
     $result = $conn->query($query);
     $pozycja = 1; // Zmienna dla numeracji wierszy
@@ -25,9 +26,11 @@ function fetchPlayers($conn) {
     else {
         echo "Brak danych do wyświetlenia.";
     }
+    $conn->close();
 }
 
 function fetchTwoPlayess($conn) {
+    $conn = new mysqli("localhost", "root", "", "szachy");
     $query = "SELECT `pseudonim`, `klasa` FROM `zawodnicy` ORDER BY RAND() LIMIT 2;";
     $result = $conn->query($query);
 
@@ -39,8 +42,8 @@ function fetchTwoPlayess($conn) {
     else {
         echo "Brak danych do wyświetlenia.";
     }
+    $conn->close();
 }
-$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -51,10 +54,10 @@ $conn->close();
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section class="naglowek">
+    <section id="naglowek">
         <h2>Koło szachowe gambit piona</h2>
     </section>
-    <section class="lewy">
+    <section id="lewy">
         <h4>Polecane linki</h4>
             <li><a href="./kwerendy/kw1.png">kwerenda1</a></li>
             <li><a href="./kwerendy/kw2.png"">kwerenda2</a></li>
@@ -62,17 +65,17 @@ $conn->close();
             <li><a href="./kwerendy/kw4.png"">kwerenda3</a></li>
         <img src="./logo.png" alt="Logo koła">
     </section>
-    <section class="prawy">
+    <section id="prawy">
         <h3>Najlepsi gracze naszego koła</h3>
         <?php
-            fetchPlayers(new mysqli($servername, $username, $password, $dbname));
+            fetchPlayers($conn);
         ?>
         <form action="">
             <input type="submit" name="fetchTwoPlayess" value="Losuj nową parę graczy" onclick="fetchTwoPlayess($conn)" />
         </form>
         <p>Legenda: AM - Absolutny Mistrz, SM - Szkolny Mistrz, PM - Mistrz Poziomu, KM - Mistrz Klasowy</p>
     </section>
-    <section class="stopka">
+    <section id="stopka">
         <p>Stronę wykonał: 11</p>
     </section>
 </body>
