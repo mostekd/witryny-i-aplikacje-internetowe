@@ -7,7 +7,7 @@
         $conn = new mysqli("localhost", "root", "", "szachy");
         $query = "SELECT pseudonim, tytul, ranking, klasa FROM zawodnicy ORDER BY ranking DESC LIMIT 10";
         $result = $conn->query($query);
-        $position = 1; // Zmienna dla numeracji wierszy
+        $position = 1;
 
         if ($result->num_rows > 0) {
             echo "<table><tr><th>Pozycja</th><th>Pseudonim</th><th>Tyłuł</th><th>Ranking</th><th>Klasa</th></tr>";
