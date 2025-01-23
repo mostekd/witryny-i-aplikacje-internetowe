@@ -35,7 +35,7 @@
 </head>
 <body>
     <section id="header">
-        <h2><mark>Koło szachowe gambit piona</mark></h2>
+        <h2><b>Koło szachowe gambit piona</b></h2>
     </section>
     <section id="left">
         <h4>Polecane linki</h4>
