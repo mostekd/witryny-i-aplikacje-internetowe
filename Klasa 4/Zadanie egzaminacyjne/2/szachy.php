@@ -1,49 +1,52 @@
 <?php
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
-$dbname = "szachy";
+    $servername = "127.0.0.1";
+    $username = "root";
+    $password = "";
+    $dbname = "szachy";
 
 
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-function fetchPlayers($conn) {
-    $conn = new mysqli("localhost", "root", "", "szachy");
-    $query = "SELECT pseudonim, tytul, ranking, klasa FROM zawodnicy ORDER BY ranking DESC LIMIT 10";
-    $result = $conn->query($query);
-    $position = 1; // Zmienna dla numeracji wierszy
-
-    if ($result->num_rows > 0) {
-        echo "<table><tr><th>Pozycja</th><th>Pseudonim</th><th>Tyłuł</th><th>Ranking</th><th>Klasa</th></tr>";
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr><td>" . $position++ . "</td><td>" . $row["pseudonim"] . "</td><td>" . $row["tytul"] . "</td><td>" . $row["ranking"] . "</td><td>" . $row["klasa"] . "</td></tr>";
-        }
-        echo "</table>";
-    } 
-    else {
-        echo "Brak danych do wyświetlenia.";
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
-    $conn->close();
-}
 
-function fetchTwoPlayess($conn) {
-    $conn = new mysqli("localhost", "root", "", "szachy");
-    $query = "SELECT `pseudonim`, `klasa` FROM `zawodnicy` ORDER BY RAND() LIMIT 2;";
-    $result = $conn->query($query);
+    function fetchPlayers($conn) {
+        $conn = new mysqli("localhost", "root", "", "szachy");
+        $query = "SELECT pseudonim, tytul, ranking, klasa FROM zawodnicy ORDER BY ranking DESC LIMIT 10";
+        $result = $conn->query($query);
+        $position = 1; // Zmienna dla numeracji wierszy
 
-    if($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<p>".$row["pseudonim"]."</p>";
+        if ($result->num_rows > 0) {
+            echo "<table><tr><th>Pozycja</th><th>Pseudonim</th><th>Tyłuł</th><th>Ranking</th><th>Klasa</th></tr>";
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr><td>" . $position++ . "</td><td>" . $row["pseudonim"] . "</td><td>" . $row["tytul"] . "</td><td>" . $row["ranking"] . "</td><td>" . $row["klasa"] . "</td></tr>";
+            }
+            echo "</table>";
+        } 
+        else {
+            echo "Brak danych do wyświetlenia.";
         }
-    } 
-    else {
-        echo "Brak danych do wyświetlenia.";
+        $conn->close();
     }
-    $conn->close();
-}
+
+    if(array_key_exists('fetchTwoPlayess', $_POST)) {
+        fetchTwoPlayess($conn);
+    }
+    function fetchTwoPlayess($conn) {
+        $conn = new mysqli("localhost", "root", "", "szachy");
+        $query = "SELECT `pseudonim`, `klasa` FROM `zawodnicy` ORDER BY RAND() LIMIT 2;";
+        $result = $conn->query($query);
+
+        if($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<p>".$row["pseudonim"]."</p>";
+            }
+        } 
+        else {
+            echo "Brak danych do wyświetlenia.";
+        }
+        $conn->close();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -72,7 +75,7 @@ function fetchTwoPlayess($conn) {
         <?php
             fetchPlayers($conn);
         ?>
-        <form action="">
+        <form action="szachy.php ">
             <input type="submit" name="fetchTwoPlayess" value="Losuj nową parę graczy" onclick="fetchTwoPlayess($conn)" />
         </form>
         <p>Legenda: AM - Absolutny Mistrz, SM - Szkolny Mistrz, PM - Mistrz Poziomu, KM - Mistrz Klasowy</p>
