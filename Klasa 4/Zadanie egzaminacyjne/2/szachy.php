@@ -35,7 +35,7 @@
 </head>
 <body>
     <section id="header">
-        <h2>Koło szachowe gambit piona</h2>
+        <h2><mark>Koło szachowe gambit piona</mark></h2>
     </section>
     <section id="left">
         <h4>Polecane linki</h4>
@@ -63,9 +63,11 @@
             $result = $conn->query($query);
 
             if($result->num_rows > 0) {
+                echo "<h4>";
                 while ($row = $result->fetch_assoc()) {
-                    echo "<h4>".$row["pseudonim"]." ".$row["klasa"]." </h4>";
+                    echo $row["pseudonim"] . " " . $row["klasa"] . " ";
                 }
+                echo "</h4>";
             } 
             else {
                 echo "Brak danych do wyświetlenia.";

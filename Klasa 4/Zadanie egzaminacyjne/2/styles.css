@@ -3,15 +3,15 @@
 }
 
 body{
-    background-color: #ffd966;
     margin: 0;
 }
 
 #header{
+    background-color: #ffd966;
     color: white;
-    text-shadow: 5px 5px 10px black;
-    text-align: center;
     padding: 20px;
+    text-align: center;
+    text-shadow: 5px 5px 10px black;
 }
 
 #left{
@@ -31,10 +31,11 @@ body{
 }
 
 #footer{
+    background-color: #ffd966;
     color: white;
-    text-shadow: 5px 5px 10px black;
-    text-align: center;
     padding: 20px;
+    text-align: center;
+    text-shadow: 5px 5px 10px black;
     font-size: 120%;
 }
 
@@ -47,7 +48,6 @@ table{
 
 tr, th, td{
     border-collapse: collapse;
-    margin: auto;
     border: solid black 1px;
 }
 
