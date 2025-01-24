@@ -31,7 +31,7 @@ main{
 }
 
 footer{
-    display: grid;
+    clear: both;
     background-color: #ffd966;
     color: white;
     padding: 20px;
