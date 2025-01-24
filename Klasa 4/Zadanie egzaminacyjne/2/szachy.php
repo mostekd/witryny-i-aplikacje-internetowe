@@ -43,7 +43,7 @@
             <li><a href="./kwerendy/kw1.png">kwerenda1</a></li>
             <li><a href="./kwerendy/kw2.png"">kwerenda2</a></li>
             <li><a href="./kwerendy/kw3.png"">kwerenda3</a></li>
-            <li><a href="./kwerendy/kw4.png"">kwerenda3</a></li>
+            <li><a href="./kwerendy/kw4.png"">kwerenda4</a></li>
         </ol>
         <img src="./logo.png" alt="Logo koła">
     </nav>
