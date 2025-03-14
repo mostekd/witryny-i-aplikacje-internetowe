@@ -1,36 +1,45 @@
 <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
     $polaczenie = mysqli_connect('localhost', 'root', '', '');
+
+    if (!$polaczenie) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 
     $wynik = mysqli_query($polaczenie,"SHOW DATABASES LIKE 'losowabaza'");
 
     if (mysqli_num_rows($wynik) == 0) {
-         mysqli_query($polaczenie, "CREATE DATABASE losowabaza");
-         mysqli_select_db($polaczenie, 'losowabaza');
+        mysqli_query($polaczenie, "CREATE DATABASE losowabaza");
+    }
 
-         $tabela = "CREATE TABLE dane (
-         id INT AUTO_INCREMENT PRIMARY KEY,
-         imie VARCHAR(50),
-         nazwisko VARCHAR(50),
-         data_urodzenia DATE,
-         wyksztalcenie VARCHAR(50),
-         zawod VARCHAR(50),
-         wynagrodzenie DECIMAL(10,2)
-         )";
+    mysqli_select_db($polaczenie, 'losowabaza');
 
-         if (mysqli_query($polaczenie, $tabla)) {
-            echo "Baza danych i tabela zostały utworzone. <br>";
-            echo '
-            <form action="" method="POST">
-                <input type="submit" name="uzupelnij_dane" value="Uzupełnij dane losowymi danymi">
-            </form>';
-         }
+    $tabela = "CREATE TABLE IF NOT EXISTS dane (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        imie VARCHAR(50),
+        nazwisko VARCHAR(50),
+        data_urodzenia DATE,
+        wyksztalcenie VARCHAR(50),
+        zawod VARCHAR(50),
+        wynagrodzenie DECIMAL(10,2)
+    )";
+
+    if (mysqli_query($polaczenie, $tabela)) {
+        echo "Baza danych i tabela zostały utworzone. <br>";
+        echo '
+        <form action="" method="POST">
+            <input type="submit" name="uzupelnij_dane" value="Uzupełnij dane losowymi danymi">
+            <input type="submit" name="wyswietl_dane" value="Wyświetl dane z tabeli">
+        </form>';
     } else {
         echo "Baza danych już istnieje. <br>";
         echo '
-            <form action="" method="POST">
-                <input type="submit" name="uzupelnij_dane" value="Uzupełnij dane losowymi danymi">
-            </form>';
-    } 
+        <form action="" method="POST">
+            <input type="submit" name="uzupelnij_dane" value="Uzupełnij dane losowymi danymi">
+        </form>';
+    }
 
     if (isset($_POST['uzupelnij_dane'])) {
         $imie = ['Anna', 'Jan', 'Maria', 'Piotr', 'Katarzyna', 'Andrzej', 'Magdalena', 'Tomasz', 'Agnieszka', 'Marek'];
@@ -53,6 +62,36 @@
             mysqli_query($polaczenie, $query);
         }
         echo "Dane zostały uzupełnione losowymi wartościami";
+    }
+
+    if (isset($_POST['wyswietl_dane'])) {
+        $result = mysqli_query($polaczenie, "SELECT * FROM dane");
+        if (mysqli_num_rows($result) > 0) {
+            echo "<table border='1'>
+                    <tr>
+                        <th>ID</th>
+                        <th>Imię</th>
+                        <th>Nazwisko</th>
+                        <th>Data urodzenia</th>
+                        <th>Wykształcenie</th>
+                        <th>Zawód</th>
+                        <th>Wynagrodzenie</th>
+                    </tr>";
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>
+                        <td>{$row['id']}</td>
+                        <td>{$row['imie']}</td>
+                        <td>{$row['nazwisko']}</td>
+                        <td>{$row['data_urodzenia']}</td>
+                        <td>{$row['wyksztalcenie']}</td>
+                        <td>{$row['zawod']}</td>
+                        <td>{$row['wynagrodzenie']}</td>
+                      </tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "Brak danych w tabeli.";
+        }
     }
 
     mysqli_close($polaczenie);
