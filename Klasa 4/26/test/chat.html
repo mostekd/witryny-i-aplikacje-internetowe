@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat</title>
+        <style>
+            * {
+                font-family: Garamond, serif;
+            }
+
+            header {
+                background-color: Tomato;
+                color: white;
+                text-align: center;
+                width: 80%;
+                height: 80px;
+            }
+
+            main {
+                width: 80%;
+                width: 600px;
+            }
+
+            aside {
+                background-color: coral;
+                width: 20%;
+                height: 680px;
+            }
+
+            footer{
+                background-color: tomato;
+                color: white;
+                text-align: center;
+            }
+
+            img {
+                border-radius: 50%;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2>Chat</h2>
+        </header>
+        <aside>
+            <h3>Chaty</h3>
+            <ul>
+                <li>Ogólny</li>
+                <li>Tematyczne
+                    <ol>
+                        <li>Turystyczny</li>
+                        <li>Żeglarski</li>
+                        <li>Filatelistyczny</li>
+                        <li>Hodowla zwierzątek domowych</li>
+                    </ol>
+                </li>
+            </ul>
+            <section>
+                <h3>Uczestnicy</h3>
+                <p>Jolanta Nowak</p>
+                <img src="../Grupa I/Krzysiek.jpg" alt="Jolanta Nowak">
+                <p>Krzysztof Łukasiński</p>
+                <img src="../Grupa I/Krzysiek.jpg" alt="Krzysztof Łukasiński">
+            </section>
+        </aside>
+        <main>
+            <section>
+                <img src="../Grupa I/Krzysiek.jpg" alt="Jolanta Nowak">
+                <p>Cześć idziesz jutro do kina?</p>
+            </section>
+            <section>
+                <img src="../Grupa I/Krzysiek.jpg" alt="Krzysztof Łukasiński">
+                <p>Tak! A ty?</p>
+            </section>
+            <section>
+                <label for="message">Wpisz wiadomość:</label>
+                <input type="text" id="message">
+                <button>Wyślij</button>
+            </section>
+            <section>
+                <button>Generuj losową odpowiedź</button>
+            </section>
+        </main>
+    </main>
+    <footer>
+        <h5>Chat wykonał: Dawid Mostowski</h5>
+    </footer>
+    </body>
+</html>
