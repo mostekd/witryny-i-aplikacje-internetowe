@@ -1,0 +1,78 @@
+* {
+    font-family: Garamond;
+}
+
+header {
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    width: 80%;
+    height: 80px;
+}
+
+main {
+    width: 80%;
+    height: 600px;
+}
+
+aside {
+    background-color: coral;
+    width: 20%;
+    height: 680px;
+    float: right;
+}
+
+footer {
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    clear: both;
+}
+
+img {
+    border-radius: 50%;
+    padding: 0 10px;
+}
+
+#chat-window {
+    border: 1px solid tomato;
+    margin: 15px;
+    height: 470px;
+    overflow-y: scroll;
+}
+
+.message {
+    border-radius: 5px;
+    width: 90%;
+    height: 70px;
+    margin: 2%;
+    padding: 3px;
+}
+
+.jolanta {
+    background-color: #EEE;
+}
+
+.jolanta img {
+    float: left;
+}
+
+.krzysztof {
+    background-color: #CCC;
+    text-align: right;
+}
+
+.krzysztof img {
+    float: right;
+}
+
+button {
+    background-color: tomato;
+    border: 1px solid darkred;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#message-input {
+    width: 500px;
+}

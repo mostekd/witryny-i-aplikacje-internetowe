@@ -1,0 +1,17 @@
+-- Zapytanie 1: Wstawianie nowego użytkownika do tabeli logowanie
+INSERT INTO logowanie (id, nick, haslo) VALUES (3, 'Jeremi', 'Jer123');
+
+-- Zapytanie 2: Obliczenie średniego roku urodzenia uczestników
+SELECT FLOOR(AVG(rokUr)) AS 'Średni rok urodzenia' FROM uczestnicy;
+
+-- Zapytanie 3: Wybieranie imienia, nazwiska, nicku i hasła dla imion zaczynających się na J
+SELECT u.imie, u.nazwisko, l.nick, l.haslo
+FROM uczestnicy u
+JOIN logowanie l ON u.logowanie_id = l.id
+WHERE u.imie LIKE 'J%';
+
+-- Zapytanie 4: Tworzenie nowego użytkownika
+CREATE USER 'uczestnik'@'localhost' IDENTIFIED BY 'Ucz123&';
+
+-- Zapytanie 5: Nadawanie uprawnień użytkownikowi
+GRANT SELECT, UPDATE ON chat.uczestnicy TO 'uczestnik'@'localhost';
