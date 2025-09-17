@@ -1,5 +1,5 @@
 <?php
-    $conn = mysqli_connect("localhost, root", "", "komis");
+    $conn = mysqli_connect("localhost", "root", "", "komis");
 ?>
 <!DOCTYPE html>
 <html lang="pl">
