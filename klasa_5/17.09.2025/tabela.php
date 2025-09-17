@@ -9,7 +9,7 @@
         <title>Strona</title>
     </head>
     <body>
-        <table border="1">
+        <table style="border: 1px solid black; border-collapse: collapse;">
             <tr>
                 <th>Marka</th>
                 <th>Model</th>
