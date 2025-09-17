@@ -9,7 +9,7 @@
         <title>Strona</title>
     </head>
     <body>
-        <ul type="square">
+        <ul>
             <?php
             $query = mysqli_query($conn, "SELECT marka, model, kolor FROM samochody");
             while ($data = mysqli_fetch_array($query)) {
