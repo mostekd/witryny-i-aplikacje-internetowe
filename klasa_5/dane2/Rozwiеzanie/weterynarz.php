@@ -5,18 +5,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Weterynarz</title>
-        <link rel="stylesheet" href="weterynarz.css">
+        <link rel="stylesheet" href="./weterynarz.css">
     </head>
     <body>
         <header>
             <h1>GABINET WETERYNARYJNY</h1>
         </header>
-        <section id="lewy">
+        <div id="lewy">
             <h2>PSY</h2>
             <?php
                 $conn = new mysqli("localhost","root","","weterynarz");
 
-                $sql = "SELECT id,imie,wlasciciel FROM Zwierzeta WHERE rodzaj=1;";
+                $sql = "SELECT id,imie,wlasciciel FROM zwierzeta WHERE rodzaj=1;";
                 $result = $conn->query($sql);
 
                 while($row = $result -> fetch_array()) {
@@ -29,7 +29,7 @@
             <?php
                 $conn = new mysqli("localhost","root","","weterynarz");
 
-                $sql = "SELECT id,imie,wlasciciel FROM Zwierzeta WHERE rodzaj=2;";
+                $sql = "SELECT id,imie,wlasciciel FROM zwierzeta WHERE rodzaj=2;";
                 $result = $conn->query($sql);
 
                 while($row = $result -> fetch_array()) {
@@ -38,13 +38,13 @@
 
                 $conn -> close();
             ?>
-        </section>
-        <section id="srodkowy">
+        </div>
+        <div id="srodkowy">
             <h2>SZCZEGÓŁOWA INFORMACJA O ZWIERZĘTACH</h2>
             <?php
                 $conn = new mysqli("localhost","root","","weterynarz");
 
-                $sql = "SELECT imie, telefon, szczepienie, opis FROM Zwierzeta;";
+                $sql = "SELECT imie, telefon, szczepienie, opis FROM zwierzeta;";
                 $result = $conn->query($sql);
 
                 while($row = $result -> fetch_array()) {
@@ -55,11 +55,11 @@
 
                 $conn -> close();
             ?>
-        </section>
+        </div>
 
-        <section id="prawy">
+        <div id="prawy">
             <h2>WETERYNARZ</h2>
-            <a href="logo.jpg"><img src="logo-mini.jpg" alt="logo.jpg"></a>
+            <a href="./logo.jpg"><img src="./logo-mini.jpg" alt="./logo.jpg"></a>
             <p>Krzysztof Nowakowski, lekarz weterynarii</p>
             <h2>GODZINY PRZYJĘĆ</h2>
             <table>
@@ -72,6 +72,6 @@
                     <td>15:00 - 19:00</td>
                 </tr>
             </table>
-        </section>
+        </div>
     </body>
 </html>
