@@ -11,7 +11,7 @@
         <header>
             <h1>GABINET WETERYNARYJNY</h1>
         </header>
-        <div id="lewy">
+        <aside id="lewy">
             <h2>PSY</h2>
             <?php
                 $conn = new mysqli("localhost","root","","weterynarz");
@@ -38,8 +38,8 @@
 
                 $conn -> close();
             ?>
-        </div>
-        <div id="srodkowy">
+        </aside>
+        <main id="srodkowy">
             <h2>SZCZEGÓŁOWA INFORMACJA O ZWIERZĘTACH</h2>
             <?php
                 $conn = new mysqli("localhost","root","","weterynarz");
@@ -55,9 +55,9 @@
 
                 $conn -> close();
             ?>
-        </div>
+        </main>
 
-        <div id="prawy">
+        <aside id="prawy">
             <h2>WETERYNARZ</h2>
             <a href="./logo.jpg"><img src="./logo-mini.jpg" alt="./logo.jpg"></a>
             <p>Krzysztof Nowakowski, lekarz weterynarii</p>
@@ -72,6 +72,6 @@
                     <td>15:00 - 19:00</td>
                 </tr>
             </table>
-        </div>
+        </aside>
     </body>
 </html>
