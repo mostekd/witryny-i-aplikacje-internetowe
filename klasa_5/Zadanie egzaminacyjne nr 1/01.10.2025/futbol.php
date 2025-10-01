@@ -17,26 +17,26 @@
             <img src="obraz1.jpg" alt="boisko">
         </header>
 
-        <div id="mecze">
+        <section id="mecze">
             <?php
                 $sql = "SELECT zespol1, zespol2, wynik, data_rozgrywki FROM rozgrywka WHERE zespol1 = 'EVG';";
                 $result = $conn->query($sql);
 
                 while($row = $result -> fetch_array()) {
-                    echo "<div class='mecz'>";
+                    echo "<section class='mecz'>";
                         echo "<h3>$row[0] - $row[1]</h3>";
                         echo "<h4>$row[2]</h4>";
                         echo "<p>w dniu: $row[3]</p>";
-                    echo "</div>";
+                    echo "</section>";
                 }
             ?>
-        </div>
+        </section>
 
         <main>
             <h2>Reprezentacja Polski</h2>
         </main>
 
-        <div id="lewy">
+        <section id="lewy">
             <p>Podaj pozycję zawodników (1-bramkarze, 2-obrońcy, 3-pomocnicy, 4-napastinicy):</p>
             <form action="futbol.php" method="post">
                 <input type="number" name="zawodnik" id="zawodnik">
@@ -56,12 +56,12 @@
                     echo "</ul>";
                 }
             ?>
-        </div>
+        </section>
 
-        <div id="prawy">
+        <section id="prawy">
             <img src="zad1.png" alt="piłkarz">
             <p>Autor: Dawid Mostowski</a></p>
-        </div>
+        </section>
     </body>
 </html>
 
