@@ -1,0 +1,16 @@
+📂 Plik do utworzenia: grupa2.php
+
+Treść zadania:
+
+Połącz się z bazą danych MySQL o nazwie zwierzeta (użytkownik root, hasło puste, host localhost).
+
+Z tabeli zwierzeta wybierz dane: gatunek, rasa, wiek, kolor.
+
+Dane te wyświetl w dwóch różnych formach w tym samym pliku:
+
+Pierwszy sposób: w postaci listy wypunktowanej <ol>, gdzie każda linia (<li>) zawiera dane jednego zwierzęcia.
+(wynik podobny do przykładu z listą samochodów).
+
+Drugi sposób: w postaci tabeli HTML, gdzie każdy wiersz (<tr>) odpowiada jednemu zwierzęciu, a każda kolumna (<td>) kolejnej właściwości (gatunek, rasa, wiek, kolor).
+(wynik podobny do przykładu z tabelą samochodów).
+
