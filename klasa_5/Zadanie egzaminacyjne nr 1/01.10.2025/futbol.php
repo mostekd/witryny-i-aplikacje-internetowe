@@ -19,7 +19,6 @@
 
         <div id="mecze">
             <?php
-                // Skrypt #1
                 $sql = "SELECT zespol1, zespol2, wynik, data_rozgrywki FROM rozgrywka WHERE zespol1 = 'EVG';";
                 $result = $conn->query($sql);
 
@@ -44,8 +43,6 @@
                 <button type="submit">Sprawdź</button>
             </form>
             <?php
-                // Skrypt #2
-
                 if (!empty($_POST["zawodnik"])) {
                     $zawodnik = $_POST["zawodnik"];
 
