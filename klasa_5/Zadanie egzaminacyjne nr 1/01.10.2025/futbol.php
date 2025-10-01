@@ -16,7 +16,7 @@
             <img src="obraz1.jpg" alt="boisko">
         </header>
 
-        <main id="mecze">
+        <section id="mecze">
             <?php
                 $sql = "SELECT zespol1, zespol2, wynik, data_rozgrywki FROM rozgrywka WHERE zespol1 = 'EVG';";
                 $result = $conn->query($sql);
@@ -29,7 +29,7 @@
                     echo "</section>";
                 }
             ?>
-        </main>
+        </section>
 
         <main>
             <h2>Reprezentacja Polski</h2>
