@@ -19,14 +19,14 @@
         </ol>
         <table border="1">
             <?php
-                    $query = mysqli_query($conn, "SELECT imie, wlasciciel, telefon FROM zwierzeta");
-                    while ($data  =  mysqli_fetch_array($query)){
-                        echo "<tr>
-                                <td>".$data['imie']."</td>
-                                <td>".$data['wlasciciel']."</td>
-                                <td>".$data['telefon']."</td>
-                            </tr>";
-                    };
+                $query = mysqli_query($conn, "SELECT imie, wlasciciel, telefon FROM zwierzeta");
+                while ($data  =  mysqli_fetch_array($query)){
+                    echo "<tr>
+                            <td>".$data['imie']."</td>
+                            <td>".$data['wlasciciel']."</td>
+                            <td>".$data['telefon']."</td>
+                        </tr>";
+                };
             ?>
         </table>
     </body>
