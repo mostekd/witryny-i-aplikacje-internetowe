@@ -16,7 +16,7 @@
             <img src="obraz1.jpg" alt="boisko">
         </header>
 
-        <section id="mecze">
+        <main id="mecze">
             <?php
                 $sql = "SELECT zespol1, zespol2, wynik, data_rozgrywki FROM rozgrywka WHERE zespol1 = 'EVG';";
                 $result = $conn->query($sql);
@@ -29,13 +29,13 @@
                     echo "</section>";
                 }
             ?>
-        </section>
+        </main>
 
         <main>
             <h2>Reprezentacja Polski</h2>
         </main>
 
-        <section id="lewy">
+        <aside id="lewy">
             <p>Podaj pozycję zawodników (1-bramkarze, 2-obrońcy, 3-pomocnicy, 4-napastinicy):</p>
             <form action="futbol.php" method="post">
                 <input type="number" name="zawodnik" id="zawodnik">
@@ -55,12 +55,12 @@
                     echo "</ul>";
                 }
             ?>
-        </section>
+        </aside>
 
-        <section id="prawy">
+        <aside id="prawy">
             <img src="zad1.png" alt="piłkarz">
             <p>Autor: Dawid Mostowski</a></p>
-        </section>
+        </aside>
     </body>
 </html>
 
