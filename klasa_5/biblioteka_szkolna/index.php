@@ -64,7 +64,7 @@ $news = $newsStmt->fetchAll();
       </article>
     <?php endforeach; ?>
 
-    <p><a class="btn" href="/klasa_5/biblioteka_szkolna/books.php">Pokaż księgozbiór</a></p>
+    <p><a class="btn" href="books.php">Pokaż księgozbiór</a></p>
   </div>
 </section>
 
