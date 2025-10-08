@@ -1,0 +1,42 @@
+body {
+    font-family: 'Arial';
+}
+
+#baner-lewy {
+    background: #483D8B;
+    height: 150px;
+    width: 30%;
+    float: left;
+}
+
+#baner-prawy {
+    background: #483D8B;
+    color: white;
+    height: 150px;
+    width: 70%;
+    float: left;
+}
+
+main {
+    clear: both;
+}
+
+.dzien {
+    background: #AFEEEE;
+    width: 150px;
+    height: 100px;
+    margin: 3px;
+    border: 1px solid;
+    float: left;
+}
+
+footer {
+    clear: both;
+    background: #483D8B;
+    color: white;
+    padding: 10px;
+}
+
+h5 {
+    text-align: center;
+}
