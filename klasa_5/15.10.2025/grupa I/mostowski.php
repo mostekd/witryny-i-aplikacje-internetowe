@@ -96,7 +96,6 @@
                 <h3>Współpracują z nami</h3>
                 <a href="http://sklep.pl/">Sklep 1</a>
             </section>
-
             <section id="stopka2">
                 <h3>Nasi top klienci</h3>
                 <ol>
@@ -110,12 +109,10 @@
                     ?>
                 </ol>
             </section>
-
             <section id="stopka3">
                 <h3>Skontaktuj się</h3>
                 <p>telefon: 111222333</p>
             </section>
-
             <section id="stopka4">
                 <h3>Autor: Dawid Mostowski</h3>
             </section>
