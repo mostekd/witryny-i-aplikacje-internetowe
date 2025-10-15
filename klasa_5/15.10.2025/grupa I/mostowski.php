@@ -100,8 +100,8 @@
                 <h3>Nasi top klienci</h3>
                 <ol>
                     <?php
-                        $sql = "SELECT imie, nazwisko, punkty FROM klienci ORDER BY punkty DESC LIMIT 3;";
-                        $result = $conn->query($sql);
+                        $query = "SELECT imie, nazwisko, punkty FROM klienci ORDER BY punkty DESC LIMIT 3;";
+                        $result = $conn->query($query);
 
                         while($row = $result -> fetch_array()) {
                             echo "<li>$row[0] $row[1], $row[2]</li>";
