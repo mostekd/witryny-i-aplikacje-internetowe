@@ -23,7 +23,7 @@
             main {
                 background: seashell;
                 height: 500px;
-                overflow: scroll;
+                overflow: auto;
             }
 
             #stopka1,#stopka2,#stopka3,#stopka4 {
