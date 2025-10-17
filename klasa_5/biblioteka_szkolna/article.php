@@ -3,9 +3,8 @@ require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/includes/header.php';
 
 $id = (int)($_GET['id'] ?? 0);
-$stmt = $pdo->prepare('SELECT * FROM news WHERE id = ? LIMIT 1');
-$stmt->execute([$id]);
-$a = $stmt->fetch();
+$stmt = executeQuery('SELECT * FROM news WHERE id = ? LIMIT 1', 'i', [$id]);
+$a = fetchOne($stmt);
 if (!$a) {
   echo '<p>Artykuł nie znaleziony. <a href="index.php">Powrót</a></p>';
   require_once __DIR__ . '/includes/footer.php';

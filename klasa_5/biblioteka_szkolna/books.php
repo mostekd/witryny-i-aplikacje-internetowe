@@ -13,9 +13,10 @@ if ($q !== '') {
   $params[] = "%$q%";
 }
 $sql .= " ORDER BY title LIMIT 200";
-$stmt = $pdo->prepare($sql);
-$stmt->execute($params);
-$results = $stmt->fetchAll();
+// Create parameter types string based on number of parameters
+$types = str_repeat('s', count($params));
+$stmt = executeQuery($sql, $types, $params);
+$results = fetchAll($stmt);
 ?>
 
 <h2>Wyszukiwanie książek</h2>

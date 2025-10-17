@@ -4,9 +4,8 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login = $_POST['login'] ?? '';
     $pass = $_POST['password'] ?? '';
-    $stmt = $pdo->prepare('SELECT * FROM admins WHERE login = ? LIMIT 1');
-    $stmt->execute([$login]);
-    $admin = $stmt->fetch();
+    $stmt = executeQuery('SELECT * FROM admins WHERE login = ? LIMIT 1', 's', [$login]);
+    $admin = fetchOne($stmt);
     if ($admin && password_verify($pass, $admin['password_hash'])) {
         $_SESSION['admin_id'] = $admin['id'];
         header('Location: dashboard.php');

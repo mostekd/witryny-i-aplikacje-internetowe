@@ -7,8 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $nick = $_POST['nick'] ?? '';
   $email = $_POST['email'] ?? '';
   $message = $_POST['message'] ?? '';
-  $stmt = $pdo->prepare('INSERT INTO guestbook_entries (nick,email,message) VALUES (?,?,?)');
-  $stmt->execute([$nick,$email,$message]);
+  $stmt = executeQuery('INSERT INTO guestbook_entries (nick,email,message) VALUES (?,?,?)', 'sss', [$nick,$email,$message]);
   $sent = true;
 }
 
