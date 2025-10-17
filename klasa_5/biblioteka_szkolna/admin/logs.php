@@ -7,6 +7,7 @@ if (!isset($_SESSION['admin_id'])) {
     exit;
 }
 
+echo '<link rel="stylesheet" href="../css/styl_admin.css">';
 include 'layout/header.php';
 ?>
 

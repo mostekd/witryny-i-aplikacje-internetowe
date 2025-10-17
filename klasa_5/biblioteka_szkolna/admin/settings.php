@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
+echo '<link rel="stylesheet" href="../css/styl_admin.css">';
 include 'layout/header.php';
 ?>
 

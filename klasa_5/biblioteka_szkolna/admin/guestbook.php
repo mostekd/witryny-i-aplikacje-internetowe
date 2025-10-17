@@ -9,6 +9,7 @@ if (!isset($_SESSION['admin_id'])) {
 
 $admin_id = $_SESSION['admin_id'];
 
+echo '<link rel="stylesheet" href="../css/styl_admin.css">';
 include 'layout/header.php';
 ?>
 

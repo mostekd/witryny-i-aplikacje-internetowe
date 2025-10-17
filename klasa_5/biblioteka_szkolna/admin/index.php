@@ -18,7 +18,7 @@ $sql = "select a.*, GROUP_CONCAT(r.nazwa) as role
         group by a.id";
 $admin = $conn->query($sql)->fetch_assoc();
 
-echo '<link rel="stylesheet" href="../css/style_admin.css">';
+echo '<link rel="stylesheet" href="../css/styl_admin.css">';
 include 'layout/header.php';
 ?>
 

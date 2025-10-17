@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+echo '<link rel="stylesheet" href="../css/styl_admin.css">';
 require_once '../database/db_connect.php';
 
 if (!isset($_SESSION['admin_id'])) {
