@@ -72,13 +72,13 @@
         </style>
     </head>
     <body>
-        <div id="logo">
+        <section id="logo">
             <img src="wzor.png" alt="wzór BMI">
-        </div>
+        </section>
 
-        <div id="baner">
+        <section id="baner">
             <h1>Oblicz swoje BMI</h1>
-        </div>
+        </section>
 
         <main>
             <table>
@@ -88,9 +88,8 @@
                     <th>Wartość maksymalna</th>
                 </tr>
                 <?php
-                    // Skrypt #1
-                    $sql = "SELECT wart_min, wart_max, informacja FROM bmi;";
-                    $result = $conn->query($sql);
+                    $query = "SELECT wart_min, wart_max, informacja FROM bmi;";
+                    $result = $conn->query($query);
                     
                     while($row = $result -> fetch_array()) {
                         echo "<tr>";
@@ -103,15 +102,18 @@
             </table>
         </main>
 
-        <div id="lewy">
+        <section id="lewy">
             <h2>Podaj wagę i wzrost</h2>
             <form action="bmi.php" method="post">
-                <label for="waga">Waga:</label> <input type="number" name="waga" id="waga" min="1"><br>
-                <label for="wzrost">Wzrost w cm:</label> <input type="number" name="wzrost" id="wzrost" min="1"><br>
+                <label for="waga">Waga:</label>
+                <input type="number" name="waga" id="waga" min="1">
+                <br>
+                <label for="wzrost">Wzrost w cm:</label>
+                <input type="number" name="wzrost" id="wzrost" min="1">
+                <br>
                 <button type="submit">Oblicz i zapamiętaj wynik</button>
             </form>
             <?php
-                // Skrypt #2
                 if(!empty($_POST["waga"]) && !empty($_POST["wzrost"])) {
                     $waga = $_POST["waga"];
                     $wzrost = $_POST["wzrost"];
@@ -135,18 +137,19 @@
 
                     $data_pomiaru = date("Y-m-d");
 
-                    $sql = "INSERT INTO wynik (bmi_id, data_pomiaru, wynik) VALUES ($bmi_id, '$data_pomiaru', $bmi);";
-                    $result = $conn->query($sql);
+                    $query = "INSERT INTO wynik (bmi_id, data_pomiaru, wynik) VALUES ($bmi_id, '$data_pomiaru', $bmi);";
+                    $result = $conn->query($query);
                 }
             ?>
-        </div>
+        </section>
 
-        <div id="prawy">
+        <section id="prawy">
             <img src="rys1.png" alt="ćwiczenia">
-        </div>
+        </section>
 
         <footer>
-            Autor: <a href="https://ee-informatyk.pl/" target="_blank" style="color: unset;text-decoration: none;">EE-Informatyk.pl</a> <a href="kwerendy.txt">Zobacz kwerendy</a>
+            Autor: Dawid Mostowski
+            <a href="kwerendy.txt">Zobacz kwerendy</a>
         </footer>
     </body>
 </html>
