@@ -104,7 +104,7 @@
 
         <section id="lewy">
             <h2>Podaj wagę i wzrost</h2>
-            <form action="bmi.php" method="post">
+            <form action="mostowski.php" method="post">
                 <label for="waga">Waga:</label>
                 <input type="number" name="waga" id="waga" min="1">
                 <br>
