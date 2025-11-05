@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Obrazek</title>
+    </head>
+    <body>
+        <h2>Obrazek</h2>
+        <form>
+            <input type="button" value="Pokaz-ukryj" onClick="oblicz()">
+        </form>
+        <p id="obr"><img src="obrazek.jpg"></p>
+        <script>
+            let obrazek = 1;
+            function oblicz() {
+                if (obrazek == 1) {
+                    document.getElementById("obr").innerHTML = "";
+                    obrazek = 0;
+                } else {
+                    document.getElementById("obr").innerHTML = "<img src='obrazek.jpg'>";
+                    obrazek = 1;
+                }
+            }
+        </script>
+    </body>
+</html>
