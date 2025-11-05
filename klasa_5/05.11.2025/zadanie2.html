@@ -9,7 +9,7 @@
         <form>
             <input type="button" value="Pokaz-ukryj" onClick="oblicz()">
         </form>
-        <p id="obr"><img src="obrazek.jpg"></p>
+        <p id="obr"><img src="./image.png"></p>
         <script>
             let obrazek = 1;
             function oblicz() {
@@ -17,7 +17,7 @@
                     document.getElementById("obr").innerHTML = "";
                     obrazek = 0;
                 } else {
-                    document.getElementById("obr").innerHTML = "<img src='obrazek.jpg'>";
+                    document.getElementById("obr").innerHTML = "<img src='./image.png'>";
                     obrazek = 1;
                 }
             }
