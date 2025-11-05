@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Lista zakupów</h2>
+    <label><input type="checkbox" id="maslo" onchange="oblicz()"> Masło 5zł</label><br>
+    <label><input type="checkbox" id="chleb" onchange="oblicz()"> CHleb 6zł</label><br>
+    <label><input type="checkbox" id="ser" onchange="oblicz()"> Ser 12zł</label><br>
+    <label><input type="checkbox" id="mleko" onchange="oblicz()"> Mleko 3zł</label><br>
+    <p id="suma"> Suma: 0zł</p>
+    <script>
+        function oblicz() {
+            let suma = 0;
+            if (document.getElementById("maslo").checked) suma += 5;
+            if (document.getElementById("chleb").checked) suma += 6;
+            if (document.getElementById("ser").checked) suma += 12;
+            if (document.getElementById("mleko").checked) suma += 3;
+            document.getElementById("suma").innerHTML = "Suma: " + suma + "zł";
+        }
+    </script>
+</body>
+</html>
