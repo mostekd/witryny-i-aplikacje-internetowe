@@ -1,4 +1,4 @@
-a<?php
+<?php
     require_once '../database/models/guestbook.php';
     $guest = new Guestbook();
 
