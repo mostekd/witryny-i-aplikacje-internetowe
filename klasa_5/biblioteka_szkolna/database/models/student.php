@@ -22,7 +22,6 @@ class Student {
             $this->update_last_login($user['id']);
             $this->log_login('student', $user['id'], $success);
 
-            // zwróć dane ucznia (dla login.php)
             return $user;
         } else {
             // nieudane logowanie też zapisujemy w historii
