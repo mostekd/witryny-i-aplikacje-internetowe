@@ -210,5 +210,9 @@ alter table students
 add column login varchar(100) unique not null,
 add column password_hash varchar(255) not null;
 
+alter table students
+add column last_login datetime null after email;
+
+
 -- (opcja: czyszczenie starszych niż 30 dni)
 -- delete from login_history where created_at < (now() - interval 30 day);
