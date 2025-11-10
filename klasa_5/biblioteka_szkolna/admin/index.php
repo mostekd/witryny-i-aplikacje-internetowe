@@ -101,10 +101,6 @@ input[type=submit]:hover {
 
     <input type="submit" value="Zaloguj się">
   </form>
-
-  <p style="text-align:center;margin-top:10px;">
-    Nie masz konta? <a href="register.php" style="color:#93c5fd;">Zarejestruj administratora</a>
-  </p>
 </div>
 </body>
 </html>
