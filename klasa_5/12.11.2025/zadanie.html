@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodawanie bloku</title>
+</head>
+<body>
+
+<button onclick="dodajBlok()">Dodaj blok</button>
+
+<section id="kontener"> </section>
+
+<script>
+function dodajBlok() {
+    const kontener = document.getElementById("kontener");
+    kontener.innerHTML = kontener.innerHTML +
+        '<section style="width:400px; height:200px; background-color:lightblue; margin-top:10px;"></section>';
+}
+</script>
+
+</body>
+</html>

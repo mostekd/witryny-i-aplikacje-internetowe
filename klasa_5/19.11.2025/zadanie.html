@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista zakupów</title>
+</head>
+<body>
+
+<h2>Lista zakupów</h2>
+<label><input type="checkbox" value="5" onchange="oblicz(this)">Masło 5zł</label><br>
+<label><input type="checkbox" value="6" onchange="oblicz(this)">Chleb 6zł</label><br>
+<label><input type="checkbox" value="12" onchange="oblicz(this)">Ser 12zł</label><br>
+<label><input type="checkbox" value="3" onchange="oblicz(this)">Mleko 3zł</label><br><br>
+
+<p id="suma">Suma: 0 zł</p>
+
+<script>
+let suma = 0;
+
+function oblicz(element) {
+    let cena = Number(element.value);
+
+    if (element.checked) {
+        suma += cena;
+    } else {
+        suma -= cena;
+    }
+
+    document.getElementById("suma").innerHTML = "Suma: " + suma + " zł";
+}
+</script>
+
+</body>
+</html>
