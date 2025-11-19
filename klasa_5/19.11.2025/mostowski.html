@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista zakupów</title>
+</head>
+<body>
+    <header>
+        <p>Lista zakupów</p>
+    </header>
+    <main>
+         <input type="checkbox" value="jajka" id="jajka" onclick="oblicz()">Jajka 8zł<br>
+        <input type="checkbox" value="masło" id="maslo" onclick="oblicz()">Masło 7zł<br>
+        <input type="checkbox" value="ser" id="ser" onclick="oblicz()">Ser 15zł<br>
+        <input type="checkbox" value="chleb" id="chleb" onclick="oblicz()">Chleb 5zł<br>
+        <input type="checkbox" value="mleko" id="mleko" onclick="oblicz()">Mleko 4zł<br>
+        <input type="checkbox" value="sok" id="sok" onclick="oblicz()">Sok 6zł<br>
+        <h3 id="wynik">Suma: 0zł</h3>
+    </main>
+    <script>
+        function oblicz() {
+            let suma = 0;
+            if (document.getElementById("jajka").checked) {
+                suma += 8;
+            }
+            if (document.getElementById("maslo").checked) {
+                suma += 7;
+            }
+            if (document.getElementById("ser").checked) {
+                suma += 15;
+            }
+            if (document.getElementById("chleb").checked) {
+                suma += 5;
+            }
+            if (document.getElementById("mleko").checked) {
+                suma += 4;
+            }
+            if (document.getElementById("sok").checked) {
+                suma += 6;
+            }
+            document.getElementById("wynik").innerHTML = "Suma: " + suma + "zł";
+        }
+    </script>
+</body>
+</html>
