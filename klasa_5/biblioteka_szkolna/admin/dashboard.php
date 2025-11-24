@@ -30,6 +30,7 @@ $recent_logins = $db->query("select user_type,user_id,ip_address,success,created
     <a href="admins_list.php">admini</a>
     <a href="login_history.php">historia logowań</a>
     <a href="settings.php">ustawienia</a>
+    <a href="reports.php">raporty</a>
     <a href="logout.php">wyloguj</a>
   </nav>
 </header>

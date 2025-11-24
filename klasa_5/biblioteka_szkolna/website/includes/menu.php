@@ -6,6 +6,7 @@
 <nav class="main-nav">
   <div class="nav-container">
     <a href="index.php" class="logo">📚 Biblioteka</a>
+    <button id="nav-toggle" aria-label="menu" style="background:transparent;border:none;color:#fff;font-size:20px;display:none;">☰</button>
     <div class="nav-links">
       <a href="index.php">Strona główna</a>
       <a href="books.php">Książki</a>

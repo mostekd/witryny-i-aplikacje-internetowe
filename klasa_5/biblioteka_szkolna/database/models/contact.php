@@ -15,7 +15,30 @@
                 VALUES (?, ?, ?, ?, ?)
             ");
             $stmt->bind_param("sssss", $topic, $first_name, $last_name, $email, $message);
-            return $stmt->execute();
+                $ok = $stmt->execute();
+
+                // Po zapisaniu do bazy spróbuj wysłać e-mail do biblioteki i kopię do nadawcy.
+                if ($ok) {
+                    $to = 'biblioteka@wesolaszkola.pl';
+                    $subject = "[Kontakt] " . $topic . " - wiadomość od " . trim($first_name . ' ' . $last_name);
+                    $body = "Temat: " . $topic . "\n\n";
+                    $body .= "Imię i nazwisko: " . trim($first_name . ' ' . $last_name) . "\n";
+                    $body .= "Email nadawcy: " . $email . "\n\n";
+                    $body .= "Treść wiadomości:\n" . $message . "\n";
+
+                    $headers = [];
+                    $headers[] = 'From: ' . ($first_name || $last_name ? ($first_name . ' ' . $last_name) : 'Kontakt') . " <no-reply@wesolaszkola.pl>";
+                    // Dołącz kopię do nadawcy
+                    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                        $headers[] = 'Cc: ' . $email;
+                    }
+                    $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+
+                    // Użycie funkcji mail() - może nie działać w środowisku lokalnym bez konfiguracji MTA.
+                    @mail($to, $subject, $body, implode("\r\n", $headers));
+                }
+
+                return $ok;
         }
 
         // Pobranie wszystkich wiadomości (panel admina)

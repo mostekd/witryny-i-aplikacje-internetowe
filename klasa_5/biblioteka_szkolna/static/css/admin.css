@@ -1,108 +1,29 @@
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin: 0;
-  background: #f3f4f6;
-  color: #111827;
-}
+/* Modern Admin styles
+   - Unified with public site
+*/
 
-header {
-  background: #4f46e5;
-  color: white;
-  padding: 15px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-header h2 {
-  margin: 0;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:#f7fafc;color:#0f172a}
+header{background:linear-gradient(90deg,#06202f,#073a67);color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+header h2{margin:0;font-size:18px}
+nav a{color:#fff;margin-left:12px;text-decoration:none;font-weight:600}
+main{max-width:1200px;margin:18px auto;padding:18px}
+.card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(11,46,70,0.06);margin-bottom:18px}
+button,input[type=submit]{background:linear-gradient(90deg,#0b57d0,#4f46e5);color:#fff;border:0;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700}
+button:hover,input[type=submit]:hover{transform:translateY(-2px)}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden}
+th,td{padding:12px 14px;border-bottom:1px solid #eef2ff;text-align:left}
+th{background:#f1f5f9;font-weight:700}
+tr:hover{background:#fbfdff}
+form label{display:block;margin-top:10px;font-weight:600}
+form input,form select,form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefc;margin-top:6px}
+.alert{padding:12px;border-radius:8px;margin-bottom:12px}
+.alert-success{background:#ecfdf5;color:#065f46}.alert-error{background:#ffeded;color:#7f1d1d}
+.dashboard-stats{display:flex;gap:12px;flex-wrap:wrap}
+.stat{background:linear-gradient(90deg,#fff,#f8fafc);border-radius:10px;padding:14px;min-width:140px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
 
-nav a {
-  color: white;
-  margin-left: 15px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.2s;
-}
+.admin-actions{display:flex;gap:8px;flex-wrap:wrap}
+.small{font-size:13px;color:#64748b}
 
-nav a:hover {
-  opacity: 0.8;
-}
-
-main {
-  padding: 30px;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-}
-
-button, input[type=submit] {
-  background: #4f46e5;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 15px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover, input[type=submit]:hover {
-  background: #4338ca;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-th, td {
-  padding: 10px 12px;
-  border-bottom: 1px solid #e5e7eb;
-  text-align: left;
-}
-
-th {
-  background: #eef2ff;
-}
-
-tr:hover {
-  background: #f9fafb;
-}
-
-form label {
-  display: block;
-  margin-top: 12px;
-}
-
-form input, form select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #d1d5db;
-  margin-top: 5px;
-}
-
-.alert {
-  padding: 10px;
-  border-radius: 6px;
-  margin-bottom: 15px;
-}
-
-.alert-success {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.alert-error {
-  background: #fee2e2;
-  color: #991b1b;
-}
