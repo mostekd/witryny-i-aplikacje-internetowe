@@ -1,0 +1,158 @@
+========================================
+BIBLIOTEKA SZKOLNA - INSTRUKCJA INSTALACJI
+========================================
+
+SZYBKA INSTALACJA (3 kroki)
+
+1. PRZYGOTOWANIE BAZY DANYCH
+   - Zaloguj się do phpMyAdmin
+   - Kliknij "Nowa baza danych"
+   - Wpisz nazwę: biblioteka_szkolna
+   - Kliknij "Utwórz"
+   - Przejdź do zakładki "Import"
+   - Wybierz plik: database/schema.sql
+   - Kliknij "Importuj"
+
+2. KONFIGURACJA POŁĄCZENIA
+   - Otwórz plik: database/config.php
+   - Zmień dane dostępu (jeśli inaczej niż domyślnie):
+     * DB_HOST: localhost
+     * DB_USER: root
+     * DB_PASSWORD: (twoje hasło)
+     * DB_NAME: biblioteka_szkolna
+
+3. PRZESŁANIE PLIKÓW NA SERWER
+   - Załaduj wszystkie pliki do katalogu publicznego
+   - Np. /var/www/html/biblioteka_szkolna_v2/
+   - Upewnij się, że katalog /images/ ma uprawnienia 755
+
+GOTOWE! Projekt jest dostępny pod adresem:
+   http://localhost/biblioteka_szkolna_v2/
+
+========================================
+DOMYŚLNE DANE LOGOWANIA
+========================================
+
+Panel administracyjny: http://localhost/biblioteka_szkolna_v2/admin/
+Login: admin
+Hasło: admin123
+
+⚠️  WAŻNE: Zmień hasło administratora po pierwszym zalogowaniu!
+
+========================================
+STRUKTURA KATALOGÓW
+========================================
+
+admin/              - Panel administracyjny
+ ├─ pages/         - Podstrony panelu
+ ├─ login.php      - Logowanie
+ ├─ index.php      - Główny panel
+ └─ logout.php     - Wylogowanie
+
+website/            - Strony publiczne
+ ├─ home.php       - Strona główna
+ ├─ search.php     - Wyszukiwanie
+ ├─ article.php    - Artykuł
+ ├─ guestbook.php  - Księga gości
+ └─ contact.php    - Kontakt
+
+database/           - Warstwa dostępu do bazy
+ ├─ config.php     - Konfiguracja
+ ├─ Ksiazka.php    - Model
+ ├─ Uczen.php      - Model
+ ├─ Wypozyczenie.php - Model
+ ├─ News.php       - Model
+ ├─ Baner.php      - Model
+ ├─ KsiegaGosci.php - Model
+ └─ schema.sql     - Schemat bazy
+
+static/             - Zasoby statyczne
+ ├─ css/
+ │  ├─ style.css   - Style strony publicznej
+ │  └─ admin.css   - Style panelu admin
+ └─ js/
+    └─ main.js     - Skrypty JavaScript
+
+images/             - Zdjęcia i media
+index.php           - Główny plik aplikacji
+
+========================================
+WYMAGANIA SYSTEMU
+========================================
+
+- PHP 7.4 lub wyższa
+- MySQL 5.7+ / MariaDB 10.2+
+- Apache z mod_rewrite
+- Obsługa sesji PHP
+- Możliwość wysyłania e-maili (dla formularza kontaktu)
+
+========================================
+FUNKCJONALNOŚCI
+========================================
+
+STRONA PUBLICZNA:
+✓ Strona główna z bannerami i artykułami
+✓ Wyszukiwanie książek
+✓ Wyświetlanie artykułów
+✓ Formularz kontaktu
+✓ Księga gości z moderacją
+✓ Widgety: pogoda, kalendarz
+
+PANEL ADMINISTRACYJNY:
+✓ Logowanie z sesją
+✓ Dashboard ze statystyką
+✓ Zarządzanie książkami
+✓ Zarządzanie uczniami
+✓ Zarządzanie wypożyczeniami
+✓ Raport książek przetrzymywanych
+✓ Zarządzanie artykułami
+✓ Zarządzanie banerami
+✓ Moderacja księgi gości
+✓ Ustawienia systemowe
+
+========================================
+BEZPIECZEŃSTWO
+========================================
+
+- SQL Injection: Chronione prepared statements
+- XSS: Sanityzacja wejścia funkcją sanitize()
+- Autoryzacja: Sesje PHP z timeoutem
+- Hasła: Szyfrowanie (zalecane bcrypt)
+
+========================================
+ROZWIĄZYWANIE PROBLEMÓW
+========================================
+
+Błąd "Cannot connect to database":
+1. Sprawdź dane w database/config.php
+2. Upewnij się, że MySQL działa
+3. Sprawdź nazwę bazy danych
+
+Błąd "Call to undefined function":
+1. Upewnij się, że wszystkie pliki są przesłane
+2. Sprawdzą uprawnienia katalogów
+3. Uruchom ponownie serwer
+
+Formularz kontaktu nie wysyła e-maili:
+1. Upewnij się, że serwer ma skonfigurowany mail
+2. Sprawdź skonfigurowany adres e-mailu
+3. Sprawdź logi serwera
+
+========================================
+WSPARCIE I KONTAKT
+========================================
+
+Pytania? Zapoznaj się z:
+- Plik README.md - pełna dokumentacja
+- Pliki modeli w database/ - komentarze w kodzie
+- Pliki stron w website/ i admin/ - struktura kodu
+
+========================================
+LICENCJA I PRAWA AUTORSKIE
+========================================
+
+Projekt dla TEB Częstochowa
+Wersja: 1.0
+Rok: 2025
+
+========================================
