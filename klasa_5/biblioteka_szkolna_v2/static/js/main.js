@@ -107,7 +107,8 @@ function generateCalendar() {
                                    <th>Pn</th><th>Wt</th><th>Śr</th><th>Cz</th><th>Pt</th><th>So</th><th>Ni</th>
                                </tr>
                            </thead>
-                           <tbody><tr>`;
+                           <tbody>
+                               <tr>`;
     
     // Puste komórki przed pierwszym dniem miesiąca
     for (let i = 1; i < firstDay; i++) {
@@ -121,6 +122,7 @@ function generateCalendar() {
         calendarHTML += `<td${isToday}>${day}</td>`;
         
         dayCount++;
+        // Jeśli tydzień się skończył (8 dniami - bo zaczynamy od 1, a 8 oznacza następny poniedziałek)
         if (dayCount > 7) {
             calendarHTML += '</tr><tr>';
             dayCount = 1;
