@@ -149,18 +149,47 @@ function initCalendar() {
 
 // ============= POGODA (Weather API) =============
 function getWeather(lat = null, lon = null) {
-    // Jeśli nie podano współrzędnych, pobierz je z IP zamiast GPS
+    // Jeśli nie podano współrzędnych, pobierz je z GPS przeglądarki
     if (lat === null || lon === null) {
-        getCityAndCoordinates().then(({ city, latitude, longitude }) => {
-            console.log('Pobrano z IP - Miasto:', city, 'Koord:', latitude, longitude);
-            displayWeather(latitude, longitude, city);
-        });
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const userLat = position.coords.latitude;
+                    const userLon = position.coords.longitude;
+                    console.log('GPS pobrana:', userLat, userLon);
+                    displayWeatherByCoordinates(userLat, userLon);
+                },
+                (error) => {
+                    console.log('Błąd GPS, kod:', error.code);
+                    // Fallback na IP
+                    getCityAndCoordinates().then(({ city, latitude, longitude }) => {
+                        console.log('Używam IP zamiast GPS - Miasto:', city);
+                        displayWeather(latitude, longitude, city);
+                    });
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 8000,
+                    maximumAge: 0
+                }
+            );
+        } else {
+            console.log('GPS niedostępne, używam IP');
+            getCityAndCoordinates().then(({ city, latitude, longitude }) => {
+                console.log('Pobrano z IP - Miasto:', city);
+                displayWeather(latitude, longitude, city);
+            });
+        }
     } else {
-        // Jeśli podano współrzędne, pobierz tylko nazwę miasta
-        getCityName(lat, lon).then(city => {
-            displayWeather(lat, lon, city);
-        });
+        displayWeatherByCoordinates(lat, lon);
     }
+}
+
+function displayWeatherByCoordinates(lat, lon) {
+    // Pobierz nazwę miasta z GPS współrzędnych
+    getCityName(lat, lon).then(cityName => {
+        displayWeather(lat, lon, cityName);
+    });
 }
 
 function getCityAndCoordinates() {
@@ -187,7 +216,8 @@ function getCityAndCoordinates() {
 }
 
 function displayWeather(lat, lon, cityName) {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&temperature_unit=celsius&wind_speed_unit=kmh`;
+    // Prawidłowy URL dla Open-Meteo API
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code,wind_speed_10m&temperature_unit=celsius&wind_speed_unit=kmh`;
     
     console.log('Pobieranie pogody z URL:', url);
     
@@ -200,25 +230,34 @@ function displayWeather(lat, lon, cityName) {
             return response.json();
         })
         .then(data => {
-            console.log('Dane pogody otrzymane:', data);
+            console.log('Dane pogody otrzymane:', JSON.stringify(data, null, 2));
             
             const weatherContainer = document.querySelector('.weather-widget');
             if (weatherContainer) {
-                if (data.current_weather) {
-                    const current = data.current_weather;
-                    const weatherDesc = getWeatherDescription(current.weather_code);
-                    const weatherIcon = getWeatherIcon(current.weather_code);
+                // Open-Meteo /forecast endpoint zwraca current
+                if (data.current) {
+                    const current = data.current;
+                    const temperature = current.temperature_2m;
+                    const windspeed = current.wind_speed_10m;
+                    const weatherCode = current.weather_code;
+                    
+                    console.log('Weather code:', weatherCode, 'Temp:', temperature, 'Wind:', windspeed);
+                    
+                    const weatherDesc = getWeatherDescription(weatherCode);
+                    const weatherIcon = getWeatherIcon(weatherCode);
+                    
+                    console.log('Weather description:', weatherDesc, 'Icon:', weatherIcon);
                     
                     weatherContainer.innerHTML = `
                         <h4>Pogoda - ${cityName}</h4>
                         <div class="weather-icon">${weatherIcon}</div>
-                        <p><strong>Temp: ${current.temperature}°C</strong></p>
-                        <p>Wiatr: ${current.windspeed} km/h</p>
+                        <p><strong>Temp: ${temperature}°C</strong></p>
+                        <p>Wiatr: ${windspeed} km/h</p>
                         <p>${weatherDesc}</p>
                     `;
                     console.log('Pogoda wyświetlona pomyślnie');
                 } else {
-                    throw new Error('Brak danych current_weather w odpowiedzi API');
+                    throw new Error('Brak danych current w odpowiedzi');
                 }
             } else {
                 console.warn('Kontener .weather-widget nie znaleziony');
