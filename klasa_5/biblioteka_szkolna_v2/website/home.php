@@ -26,7 +26,7 @@ if ($articlesResult && $articlesResult->num_rows > 0):
                 </div>
 
                 <?php if ($article['zdjecie']): ?>
-                    <img src="<?php echo IMAGES_PATH; ?>/<?php echo htmlspecialchars(basename($article['zdjecie'])); ?>" 
+                    <img src="<?php echo IMAGES_PATH; ?>/articles/<?php echo htmlspecialchars(basename($article['zdjecie'])); ?>" 
                          alt="<?php echo htmlspecialchars($article['tytul']); ?>" 
                          class="article-image">
                 <?php endif; ?>
