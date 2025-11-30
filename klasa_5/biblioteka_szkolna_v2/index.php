@@ -62,7 +62,7 @@ try {
         <?php if (!empty($banersArray)): ?>
             <?php foreach ($banersArray as $index => $baner): ?>
                 <div class="banner <?php echo $index === 0 ? 'active' : ''; ?>">
-                    <img src="<?php echo IMAGES_PATH; ?>/<?php echo htmlspecialchars($baner['sciezka_zdjecia']); ?>" 
+                    <img src="<?php echo IMAGES_PATH; ?>/baner/<?php echo htmlspecialchars(basename($baner['sciezka_zdjecia'])); ?>" 
                          alt="<?php echo htmlspecialchars($baner['tytul'] ?? 'Baner'); ?>">
                 </div>
             <?php endforeach; ?>
@@ -130,7 +130,7 @@ try {
                     
                     if ($randomImage):
                 ?>
-                    <img src="<?php echo IMAGES_PATH; ?>/<?php echo htmlspecialchars($randomImage); ?>" 
+                    <img src="<?php echo IMAGES_PATH; ?>/<?php echo htmlspecialchars(basename($randomImage)); ?>" 
                          alt="Artykuł" style="width: 100%; border-radius: 4px; max-height: 200px; object-fit: cover;">
                     <p style="margin-top: 1rem; text-align: center; color: #999; font-size: 0.9rem;">Losowe zdjęcie z artykułów</p>
                 <?php else: ?>

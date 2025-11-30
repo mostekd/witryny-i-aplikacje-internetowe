@@ -35,7 +35,7 @@ if ($id > 0) {
             </div>
 
             <?php if ($article['zdjecie']): ?>
-                <img src="<?php echo IMAGES_PATH; ?>/<?php echo htmlspecialchars($article['zdjecie']); ?>" 
+                <img src="<?php echo IMAGES_PATH; ?>/<?php echo htmlspecialchars(basename($article['zdjecie'])); ?>" 
                      alt="<?php echo htmlspecialchars($article['tytul']); ?>" 
                      class="article-image" style="max-height: 500px;">
             <?php endif; ?>
