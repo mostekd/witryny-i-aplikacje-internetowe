@@ -88,7 +88,7 @@ if ($subaction === 'edit' && $id > 0) {
             <div class="form-group">
                 <label for="tytul">Tytuł *</label>
                 <input type="text" id="tytul" name="tytul" 
-                       value="<?php echo htmlspecialchars($articleToEdit['tytul'] ?? ''); ?>"
+                       value="<?php echo ($articleToEdit['tytul'] ?? ''); ?>"
                        required>
             </div>
 
@@ -96,12 +96,12 @@ if ($subaction === 'edit' && $id > 0) {
                 <label for="wstep">Wstęp (skrót)</label>
                 <input type="text" id="wstep" name="wstep" 
                        placeholder="Krótka zapowiedź artykułu"
-                       value="<?php echo htmlspecialchars($articleToEdit['wstep'] ?? ''); ?>">
+                       value="<?php echo ($articleToEdit['wstep'] ?? ''); ?>">
             </div>
 
             <div class="form-group">
                 <label for="tresc">Treść *</label>
-                <textarea id="tresc" name="tresc" required><?php echo htmlspecialchars($articleToEdit['tresc'] ?? ''); ?></textarea>
+                <textarea id="tresc" name="tresc" required><?php echo ($articleToEdit['tresc'] ?? ''); ?></textarea>
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
@@ -109,14 +109,14 @@ if ($subaction === 'edit' && $id > 0) {
                     <label for="autor">Autor</label>
                     <input type="text" id="autor" name="autor" 
                            placeholder="Pozostaw puste, aby ustawić Twoje dane"
-                           value="<?php echo htmlspecialchars($articleToEdit['autor'] ?? ''); ?>">
+                           value="<?php echo ($articleToEdit['autor'] ?? ''); ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="zdjecie">Zdjęcie (nazwa pliku)</label>
                     <input type="text" id="zdjecie" name="zdjecie" 
                            placeholder="Np. artykul1.jpg"
-                           value="<?php echo htmlspecialchars($articleToEdit['zdjecie'] ?? ''); ?>">
+                           value="<?php echo ($articleToEdit['zdjecie'] ?? ''); ?>">
                 </div>
             </div>
 
@@ -166,8 +166,8 @@ if ($subaction === 'edit' && $id > 0) {
                         while ($article = $newsResult->fetch_assoc()):
                 ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($article['tytul']); ?></td>
-                        <td><?php echo htmlspecialchars($article['autor']); ?></td>
+                        <td><?php echo ($article['tytul']); ?></td>
+                        <td><?php echo ($article['autor']); ?></td>
                         <td><?php echo date('d.m.Y H:i', strtotime($article['data_publikacji'])); ?></td>
                         <td><?php echo $article['ilosc_wyswietlen']; ?></td>
                         <td>

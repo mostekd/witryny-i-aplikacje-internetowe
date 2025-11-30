@@ -87,14 +87,14 @@ if ($subaction === 'edit' && $id > 0) {
                 <div class="form-group">
                     <label for="imie">Imię *</label>
                     <input type="text" id="imie" name="imie" 
-                           value="<?php echo htmlspecialchars($studentToEdit['imie'] ?? ''); ?>"
+                           value="<?php echo ($studentToEdit['imie'] ?? ''); ?>"
                            required>
                 </div>
 
                 <div class="form-group">
                     <label for="nazwisko">Nazwisko *</label>
                     <input type="text" id="nazwisko" name="nazwisko" 
-                           value="<?php echo htmlspecialchars($studentToEdit['nazwisko'] ?? ''); ?>"
+                           value="<?php echo ($studentToEdit['nazwisko'] ?? ''); ?>"
                            required>
                 </div>
             </div>
@@ -104,26 +104,26 @@ if ($subaction === 'edit' && $id > 0) {
                     <label for="pesel">PESEL</label>
                     <input type="text" id="pesel" name="pesel" 
                            pattern="[0-9]{11}"
-                           value="<?php echo htmlspecialchars($studentToEdit['pesel'] ?? ''); ?>">
+                           value="<?php echo ($studentToEdit['pesel'] ?? ''); ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="klasa">Klasa</label>
                     <input type="text" id="klasa" name="klasa" 
                            placeholder="Np. 3a, 4b"
-                           value="<?php echo htmlspecialchars($studentToEdit['klasa'] ?? ''); ?>">
+                           value="<?php echo ($studentToEdit['klasa'] ?? ''); ?>">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" 
-                       value="<?php echo htmlspecialchars($studentToEdit['email'] ?? ''); ?>">
+                       value="<?php echo ($studentToEdit['email'] ?? ''); ?>">
             </div>
 
             <div class="form-group">
                 <label for="uwagi">Uwagi</label>
-                <textarea id="uwagi" name="uwagi"><?php echo htmlspecialchars($studentToEdit['uwagi'] ?? ''); ?></textarea>
+                <textarea id="uwagi" name="uwagi"><?php echo ($studentToEdit['uwagi'] ?? ''); ?></textarea>
             </div>
 
             <div class="form-group">
@@ -173,11 +173,11 @@ if ($subaction === 'edit' && $id > 0) {
                         while ($student = $studentsResult->fetch_assoc()):
                 ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($student['imie']); ?></td>
-                        <td><?php echo htmlspecialchars($student['nazwisko']); ?></td>
-                        <td><?php echo htmlspecialchars($student['pesel'] ?? '-'); ?></td>
-                        <td><?php echo htmlspecialchars($student['klasa'] ?? '-'); ?></td>
-                        <td><?php echo htmlspecialchars($student['email'] ?? '-'); ?></td>
+                        <td><?php echo ($student['imie']); ?></td>
+                        <td><?php echo ($student['nazwisko']); ?></td>
+                        <td><?php echo ($student['pesel'] ?? '-'); ?></td>
+                        <td><?php echo ($student['klasa'] ?? '-'); ?></td>
+                        <td><?php echo ($student['email'] ?? '-'); ?></td>
                         <td>
                             <?php echo $student['aktywny'] ? '<span style="color: green;"><i class="fas fa-check"></i> Aktywny</span>' : '<span style="color: red;"><i class="fas fa-ban"></i> Nieaktywny</span>'; ?>
                         </td>

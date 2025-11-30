@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                             while ($book = $booksResult->fetch_assoc()):
                     ?>
                         <option value="<?php echo $book['id']; ?>">
-                            <?php echo htmlspecialchars($book['tytul'] . ' - ' . $book['autor']); ?>
+                            <?php echo ($book['tytul'] . ' - ' . $book['autor']); ?>
                         </option>
                     <?php
                             endwhile;
@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                             while ($student = $studentsResult->fetch_assoc()):
                     ?>
                         <option value="<?php echo $student['id']; ?>">
-                            <?php echo htmlspecialchars($student['imie'] . ' ' . $student['nazwisko'] . ' (' . $student['klasa'] . ')'); ?>
+                            <?php echo ($student['imie'] . ' ' . $student['nazwisko'] . ' (' . $student['klasa'] . ')'); ?>
                         </option>
                     <?php
                             endwhile;
@@ -150,8 +150,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                             $is_overdue = $days_lent > DEFAULT_LOAN_PERIOD;
                 ?>
                     <tr style="<?php echo $is_overdue ? 'background-color: #ffebee;' : ''; ?>">
-                        <td><?php echo htmlspecialchars($rental['tytul']); ?></td>
-                        <td><?php echo htmlspecialchars($rental['imie'] . ' ' . $rental['nazwisko']); ?></td>
+                        <td><?php echo ($rental['tytul']); ?></td>
+                        <td><?php echo ($rental['imie'] . ' ' . $rental['nazwisko']); ?></td>
                         <td><?php echo date('d.m.Y H:i', strtotime($rental['data_wypozyczenia'])); ?></td>
                         <td><?php echo date('d.m.Y', strtotime($rental['data_planowanego_zwrotu'])); ?></td>
                         <td>
@@ -217,8 +217,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                                 $count++;
                 ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($rental['tytul']); ?></td>
-                        <td><?php echo htmlspecialchars($rental['imie'] . ' ' . $rental['nazwisko']); ?></td>
+                        <td><?php echo ($rental['tytul']); ?></td>
+                        <td><?php echo ($rental['imie'] . ' ' . $rental['nazwisko']); ?></td>
                         <td><?php echo date('d.m.Y H:i', strtotime($rental['data_wypozyczenia'])); ?></td>
                         <td><?php echo date('d.m.Y H:i', strtotime($rental['data_zwrotu'])); ?></td>
                     </tr>

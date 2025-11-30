@@ -74,8 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 <div class="form-section">
     <h3>Statystyka systemu</h3>
     
-    <p><strong>Zalogowany administrator:</strong> <?php echo htmlspecialchars($_SESSION['admin_imie'] . ' ' . $_SESSION['admin_nazwisko']); ?></p>
-    <p><strong>E-mail administratora:</strong> <?php echo htmlspecialchars($_SESSION['admin_email']); ?></p>
+    <p><strong>Zalogowany administrator:</strong> <?php echo ($_SESSION['admin_imie'] . ' ' . $_SESSION['admin_nazwisko']); ?></p>
+    <p><strong>E-mail administratora:</strong> <?php echo ($_SESSION['admin_email']); ?></p>
     <p><strong>Bieżący czas serwera:</strong> <?php echo date('d.m.Y H:i:s'); ?></p>
     
     <hr>

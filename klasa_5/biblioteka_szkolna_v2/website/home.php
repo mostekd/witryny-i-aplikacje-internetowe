@@ -16,7 +16,7 @@ if ($articlesResult && $articlesResult->num_rows > 0):
     <div class="articles-container">
         <?php while ($article = $articlesResult->fetch_assoc()): ?>
             <article class="article">
-                <h2 class="article-title"><?php echo htmlspecialchars($article['tytul']); ?></h2>
+                <h2 class="article-title"><?php echo ($article['tytul']); ?></h2>
                 <div class="article-date">
                     <i class="fas fa-calendar"></i>
                     <?php 
@@ -26,19 +26,19 @@ if ($articlesResult && $articlesResult->num_rows > 0):
                 </div>
 
                 <?php if ($article['zdjecie']): ?>
-                    <img src="<?php echo IMAGES_PATH; ?>/articles/<?php echo htmlspecialchars(basename($article['zdjecie'])); ?>" 
-                         alt="<?php echo htmlspecialchars($article['tytul']); ?>" 
+                    <img src="<?php echo IMAGES_PATH; ?>/articles/<?php echo (basename($article['zdjecie'])); ?>" 
+                         alt="<?php echo ($article['tytul']); ?>" 
                          class="article-image">
                 <?php endif; ?>
 
                 <div class="article-excerpt">
-                    <?php echo htmlspecialchars($article['wstep'] ?? substr($article['tresc'], 0, 200)); ?>
+                    <?php echo ($article['wstep'] ?? substr($article['tresc'], 0, 200)); ?>
                     ...
                 </div>
 
                 <div class="article-footer">
                     <span class="article-author">
-                        <i class="fas fa-user"></i> <?php echo htmlspecialchars($article['autor']); ?>
+                        <i class="fas fa-user"></i> <?php echo ($article['autor']); ?>
                     </span>
                     <a href="?page=article&id=<?php echo $article['id']; ?>" class="btn-more">
                         Czytaj więcej <i class="fas fa-arrow-right"></i>

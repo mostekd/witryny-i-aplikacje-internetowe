@@ -67,9 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             <tbody>
                 <?php while ($entry = $pendingResult->fetch_assoc()): ?>
                     <tr style="background-color: #fff3cd;">
-                        <td><?php echo htmlspecialchars($entry['nick']); ?></td>
-                        <td><?php echo htmlspecialchars($entry['email']); ?></td>
-                        <td><?php echo htmlspecialchars(substr($entry['tresc'], 0, 100) . '...'); ?></td>
+                        <td><?php echo ($entry['nick']); ?></td>
+                        <td><?php echo ($entry['email']); ?></td>
+                        <td><?php echo (substr($entry['tresc'], 0, 100) . '...'); ?></td>
                         <td><?php echo date('d.m.Y H:i', strtotime($entry['data_dodania'])); ?></td>
                         <td>
                             <div class="action-buttons" style="flex-direction: column;">
@@ -122,9 +122,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             <tbody>
                 <?php while ($entry = $publishedResult->fetch_assoc()): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($entry['nick']); ?></td>
-                        <td><?php echo htmlspecialchars($entry['email']); ?></td>
-                        <td><?php echo htmlspecialchars(substr($entry['tresc'], 0, 100) . '...'); ?></td>
+                        <td><?php echo ($entry['nick']); ?></td>
+                        <td><?php echo ($entry['email']); ?></td>
+                        <td><?php echo (substr($entry['tresc'], 0, 100) . '...'); ?></td>
                         <td><?php echo date('d.m.Y H:i', strtotime($entry['data_dodania'])); ?></td>
                         <td>
                             <form method="POST" style="display: inline;" onsubmit="return confirm('Czy na pewno chcesz usunąć ten wpis?');">

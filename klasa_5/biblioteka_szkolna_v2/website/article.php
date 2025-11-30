@@ -22,7 +22,7 @@ if ($id > 0) {
         </div>
 
         <article class="article">
-            <h1><?php echo htmlspecialchars($article['tytul']); ?></h1>
+            <h1><?php echo ($article['tytul']); ?></h1>
             
             <div class="article-date" style="margin: 1rem 0;">
                 <i class="fas fa-calendar"></i>
@@ -30,18 +30,18 @@ if ($id > 0) {
                     $date = new DateTime($article['data_publikacji']);
                     echo $date->format('d.m.Y H:i');
                 ?>
-                | <i class="fas fa-user"></i> <?php echo htmlspecialchars($article['autor']); ?>
+                | <i class="fas fa-user"></i> <?php echo ($article['autor']); ?>
                 | <i class="fas fa-eye"></i> <?php echo $article['ilosc_wyswietlen']; ?> wyświetleń
             </div>
 
             <?php if ($article['zdjecie']): ?>
-                <img src="<?php echo IMAGES_PATH; ?>/articles/<?php echo htmlspecialchars(basename($article['zdjecie'])); ?>" 
-                     alt="<?php echo htmlspecialchars($article['tytul']); ?>" 
+                <img src="<?php echo IMAGES_PATH; ?>/articles/<?php echo (basename($article['zdjecie'])); ?>" 
+                     alt="<?php echo ($article['tytul']); ?>" 
                      class="article-image" style="max-height: 500px;">
             <?php endif; ?>
 
             <div style="margin: 2rem 0; line-height: 1.8; color: #555; font-size: 1.05rem;">
-                <?php echo nl2br(htmlspecialchars($article['tresc'])); ?>
+                <?php echo nl2br(($article['tresc'])); ?>
             </div>
         </article>
 

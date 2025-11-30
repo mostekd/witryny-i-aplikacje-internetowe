@@ -33,21 +33,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="tytul">Tytuł:</label>
             <input type="text" id="tytul" name="tytul" 
                    placeholder="Wpisz fragment tytułu" 
-                   value="<?php echo htmlspecialchars($search_tytul); ?>">
+                   value="<?php echo ($search_tytul); ?>">
         </div>
 
         <div class="form-group">
             <label for="autor">Autor:</label>
             <input type="text" id="autor" name="autor" 
                    placeholder="Wpisz imię lub nazwisko autora" 
-                   value="<?php echo htmlspecialchars($search_autor); ?>">
+                   value="<?php echo ($search_autor); ?>">
         </div>
 
         <div class="form-group">
             <label for="rok_wydania">Rok wydania:</label>
             <input type="number" id="rok_wydania" name="rok_wydania" 
                    placeholder="Np. 2020"
-                   value="<?php echo htmlspecialchars($search_rok); ?>">
+                   value="<?php echo ($search_rok); ?>">
         </div>
 
         <div class="form-group">
@@ -83,11 +83,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <tbody>
                     <?php while ($book = $results->fetch_assoc()): ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($book['tytul']); ?></td>
-                            <td><?php echo htmlspecialchars($book['autor']); ?></td>
-                            <td><?php echo htmlspecialchars($book['wydawnictwo'] ?? '-'); ?></td>
+                            <td><?php echo ($book['tytul']); ?></td>
+                            <td><?php echo ($book['autor']); ?></td>
+                            <td><?php echo ($book['wydawnictwo'] ?? '-'); ?></td>
                             <td><?php echo $book['rok_wydania'] ?? '-'; ?></td>
-                            <td><?php echo htmlspecialchars($book['isbn'] ?? '-'); ?></td>
+                            <td><?php echo ($book['isbn'] ?? '-'); ?></td>
                             <td>
                                 <?php 
                                     $dostepne = $ksiazkaObj->getAvailableCopies($book['id']);

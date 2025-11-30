@@ -84,25 +84,25 @@ if ($subaction === 'edit' && $id > 0) {
                 <label for="sciezka_zdjecia">Ścieżka do zdjęcia *</label>
                 <input type="text" id="sciezka_zdjecia" name="sciezka_zdjecia" 
                        placeholder="Np. baner1.jpg lub foldery/baner1.jpg"
-                       value="<?php echo htmlspecialchars($bannerToEdit['sciezka_zdjecia'] ?? ''); ?>"
+                       value="<?php echo ($bannerToEdit['sciezka_zdjecia'] ?? ''); ?>"
                        required>
             </div>
 
             <div class="form-group">
                 <label for="tytul">Tytuł</label>
                 <input type="text" id="tytul" name="tytul" 
-                       value="<?php echo htmlspecialchars($bannerToEdit['tytul'] ?? ''); ?>">
+                       value="<?php echo ($bannerToEdit['tytul'] ?? ''); ?>">
             </div>
 
             <div class="form-group">
                 <label for="opis">Opis</label>
-                <textarea id="opis" name="opis"><?php echo htmlspecialchars($bannerToEdit['opis'] ?? ''); ?></textarea>
+                <textarea id="opis" name="opis"><?php echo ($bannerToEdit['opis'] ?? ''); ?></textarea>
             </div>
 
             <div class="form-group">
                 <label for="kolejnosc">Kolejność wyświetlania</label>
                 <input type="number" id="kolejnosc" name="kolejnosc" 
-                       value="<?php echo htmlspecialchars($bannerToEdit['kolejnosc'] ?? 0); ?>">
+                       value="<?php echo ($bannerToEdit['kolejnosc'] ?? 0); ?>">
             </div>
 
             <div class="form-group">
@@ -150,8 +150,8 @@ if ($subaction === 'edit' && $id > 0) {
                         while ($banner = $banersResult->fetch_assoc()):
                 ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($banner['tytul'] ?? '-'); ?></td>
-                        <td><?php echo htmlspecialchars($banner['sciezka_zdjecia']); ?></td>
+                        <td><?php echo ($banner['tytul'] ?? '-'); ?></td>
+                        <td><?php echo ($banner['sciezka_zdjecia']); ?></td>
                         <td><?php echo $banner['kolejnosc']; ?></td>
                         <td>
                             <?php echo $banner['aktywny'] ? '<span style="color: green;"><i class="fas fa-check"></i> Aktywny</span>' : '<span style="color: red;"><i class="fas fa-ban"></i> Nieaktywny</span>'; ?>

@@ -64,7 +64,7 @@ $postsResult = $ksiegaObj->getAll();
             <label for="nick">Twój nick *</label>
             <input type="text" id="nick" name="nick" 
                    placeholder="Wpisz swój nick (2-100 znaków)"
-                   value="<?php echo htmlspecialchars($_POST['nick'] ?? ''); ?>"
+                   value="<?php echo ($_POST['nick'] ?? ''); ?>"
                    minlength="2" maxlength="100" required>
         </div>
 
@@ -72,7 +72,7 @@ $postsResult = $ksiegaObj->getAll();
             <label for="email">Twój e-mail *</label>
             <input type="email" id="email" name="email" 
                    placeholder="Wpisz swój adres e-mail"
-                   value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>"
+                   value="<?php echo ($_POST['email'] ?? ''); ?>"
                    required>
         </div>
 
@@ -80,7 +80,7 @@ $postsResult = $ksiegaObj->getAll();
             <label for="tresc">Treść wpisu *</label>
             <textarea id="tresc" name="tresc" 
                       placeholder="Wpisz treść wpisu (10-5000 znaków)"
-                      minlength="10" maxlength="5000" required><?php echo htmlspecialchars($_POST['tresc'] ?? ''); ?></textarea>
+                      minlength="10" maxlength="5000" required><?php echo ($_POST['tresc'] ?? ''); ?></textarea>
         </div>
 
         <div class="form-group">
@@ -105,7 +105,7 @@ $postsResult = $ksiegaObj->getAll();
             <div class="article" style="border-left-color: #3498db;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <h3 style="margin: 0; color: var(--primary-color); font-size: 1.2rem;">
-                        <i class="fas fa-user"></i> <?php echo htmlspecialchars($post['nick']); ?>
+                        <i class="fas fa-user"></i> <?php echo ($post['nick']); ?>
                     </h3>
                     <span class="article-date" style="margin: 0;">
                         <i class="fas fa-calendar"></i>
@@ -117,11 +117,11 @@ $postsResult = $ksiegaObj->getAll();
                 </div>
 
                 <p style="margin: 1rem 0; color: #666; font-size: 0.9rem;">
-                    <i class="fas fa-envelope"></i> <?php echo htmlspecialchars($post['email']); ?>
+                    <i class="fas fa-envelope"></i> <?php echo ($post['email']); ?>
                 </p>
 
                 <div style="margin: 1rem 0; padding: 1rem; background-color: #f9f9f9; border-radius: 4px;">
-                    <?php echo htmlspecialchars($post['tresc']); ?>
+                    <?php echo ($post['tresc']); ?>
                 </div>
             </div>
         <?php endwhile; ?>

@@ -110,16 +110,16 @@ function sanitize($data) {
 
 // Funkcja do wyświetlania błędów
 function showError($message) {
-    echo '<div class="alert alert-danger">' . htmlspecialchars($message) . '</div>';
+    echo '<div class="alert alert-danger">' . ($message) . '</div>';
 }
 
 // Funkcja do wyświetlania sukcesu
 function showSuccess($message) {
-    echo '<div class="alert alert-success">' . htmlspecialchars($message) . '</div>';
+    echo '<div class="alert alert-success">' . ($message) . '</div>';
 }
 
 // Funkcja do wyświetlania informacji
 function showInfo($message) {
-    echo '<div class="alert alert-info">' . htmlspecialchars($message) . '</div>';
+    echo '<div class="alert alert-info">' . ($message) . '</div>';
 }
 ?>

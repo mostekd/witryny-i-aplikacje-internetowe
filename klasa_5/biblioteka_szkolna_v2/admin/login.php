@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="login">Login</label>
                     <input type="text" id="login" name="login" 
                            placeholder="Wpisz login"
-                           value="<?php echo htmlspecialchars($_POST['login'] ?? ''); ?>"
+                           value="<?php echo ($_POST['login'] ?? ''); ?>"
                            required autofocus>
                 </div>
 

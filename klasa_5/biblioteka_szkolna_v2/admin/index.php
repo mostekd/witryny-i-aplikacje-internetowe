@@ -45,7 +45,7 @@ $ksiegaObj = new KsiegaGosci();
         <div class="admin-header">
             <h1><i class="fas fa-tachometer-alt"></i> Panel administracyjny</h1>
             <div class="admin-user">
-                <span><i class="fas fa-user"></i> <?php echo htmlspecialchars($_SESSION['admin_imie'] . ' ' . $_SESSION['admin_nazwisko']); ?></span>
+                <span><i class="fas fa-user"></i> <?php echo ($_SESSION['admin_imie'] . ' ' . $_SESSION['admin_nazwisko']); ?></span>
                 <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Wyloguj</a>
             </div>
         </div>

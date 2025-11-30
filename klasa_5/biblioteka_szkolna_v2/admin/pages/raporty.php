@@ -62,8 +62,8 @@ $search_litera = isset($_POST['search_litera']) ? sanitize($_POST['search_litera
                         while ($book = $overdueResult->fetch_assoc()):
                 ?>
                     <tr style="background-color: #ffebee;">
-                        <td><?php echo htmlspecialchars($book['tytul']); ?></td>
-                        <td><?php echo htmlspecialchars($book['imie'] . ' ' . $book['nazwisko']); ?></td>
+                        <td><?php echo ($book['tytul']); ?></td>
+                        <td><?php echo ($book['imie'] . ' ' . $book['nazwisko']); ?></td>
                         <td><?php echo date('d.m.Y', strtotime($book['data_wypozyczenia'])); ?></td>
                         <td><?php echo date('d.m.Y', strtotime($book['data_planowanego_zwrotu'])); ?></td>
                         <td style="font-weight: bold; color: red;"><?php echo $book['dni_przekroczenia']; ?> dni</td>
@@ -90,7 +90,7 @@ $search_litera = isset($_POST['search_litera']) ? sanitize($_POST['search_litera
                 <label for="search_litera">Szukaj po nazwisku (pierwsza litera):</label>
                 <input type="text" id="search_litera" name="search_litera" 
                        maxlength="1" placeholder="Np. K"
-                       value="<?php echo htmlspecialchars($search_litera); ?>">
+                       value="<?php echo ($search_litera); ?>">
             </div>
             <button type="submit" class="btn btn-primary">Szukaj</button>
         </form>
@@ -123,11 +123,11 @@ $search_litera = isset($_POST['search_litera']) ? sanitize($_POST['search_litera
                             $allCount = $allRentals ? $allRentals->num_rows : 0;
                 ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($student['imie'] . ' ' . $student['nazwisko']); ?></td>
-                        <td><?php echo htmlspecialchars($student['klasa'] ?? '-'); ?></td>
+                        <td><?php echo ($student['imie'] . ' ' . $student['nazwisko']); ?></td>
+                        <td><?php echo ($student['klasa'] ?? '-'); ?></td>
                         <td><?php echo $activeCount; ?></td>
                         <td><?php echo $allCount; ?></td>
-                        <td><?php echo htmlspecialchars($student['email'] ?? '-'); ?></td>
+                        <td><?php echo ($student['email'] ?? '-'); ?></td>
                     </tr>
                 <?php
                         endwhile;
@@ -166,8 +166,8 @@ $search_litera = isset($_POST['search_litera']) ? sanitize($_POST['search_litera
                             $borrowed = $book['ilosc_kopii'] - $available;
                 ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($book['tytul']); ?></td>
-                        <td><?php echo htmlspecialchars($book['autor']); ?></td>
+                        <td><?php echo ($book['tytul']); ?></td>
+                        <td><?php echo ($book['autor']); ?></td>
                         <td><?php echo $book['ilosc_kopii']; ?></td>
                         <td><?php echo $available; ?></td>
                         <td><?php echo $borrowed; ?></td>

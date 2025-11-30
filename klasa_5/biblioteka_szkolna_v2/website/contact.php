@@ -29,16 +29,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $headers .= "From: " . $email . "\r\n";
         $headers .= "Reply-To: " . $email . "\r\n";
 
-        $temat_mail = "Nowa wiadomość z formularza kontaktowego - " . htmlspecialchars($typ);
+        $temat_mail = "Nowa wiadomość z formularza kontaktowego - " . ($typ);
         
         $wiadomosc_mail = "Nowa wiadomość ze strony biblioteki.\n\n";
-        $wiadomosc_mail .= "Typ wiadomości: " . htmlspecialchars($typ) . "\n";
-        $wiadomosc_mail .= "Imię: " . htmlspecialchars($imie) . "\n";
-        $wiadomosc_mail .= "Nazwisko: " . htmlspecialchars($nazwisko) . "\n";
-        $wiadomosc_mail .= "E-mail: " . htmlspecialchars($email) . "\n";
+        $wiadomosc_mail .= "Typ wiadomości: " . ($typ) . "\n";
+        $wiadomosc_mail .= "Imię: " . ($imie) . "\n";
+        $wiadomosc_mail .= "Nazwisko: " . ($nazwisko) . "\n";
+        $wiadomosc_mail .= "E-mail: " . ($email) . "\n";
         $wiadomosc_mail .= "Data wysłania: " . date('d.m.Y H:i:s') . "\n\n";
         $wiadomosc_mail .= "Treść wiadomości:\n";
-        $wiadomosc_mail .= htmlspecialchars($tresc) . "\n\n";
+        $wiadomosc_mail .= ($tresc) . "\n\n";
         $wiadomosc_mail .= "---\n";
         $wiadomosc_mail .= "Biblioteka Szkoły - Wesoła Szkoła\n";
         $wiadomosc_mail .= LIBRARY_ADDRESS . "\n";
@@ -52,13 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $headers_kopia .= "From: " . LIBRARY_EMAIL . "\r\n";
 
         $temat_kopia = "Potwierdzenie wysłania wiadomości - Biblioteka Szkoły";
-        $wiadomosc_kopia = "Szanowny Panie/Pani " . htmlspecialchars($imie) . " " . htmlspecialchars($nazwisko) . ",\n\n";
+        $wiadomosc_kopia = "Szanowny Panie/Pani " . ($imie) . " " . ($nazwisko) . ",\n\n";
         $wiadomosc_kopia .= "Potwierdzamy otrzymanie Twojej wiadomości.\n";
         $wiadomosc_kopia .= "Nasz zespół zajmie się Twoją sprawą i skontaktuje się z Tobą tak szybko, jak będzie to możliwe.\n\n";
-        $wiadomosc_kopia .= "Typ wiadomości: " . htmlspecialchars($typ) . "\n";
+        $wiadomosc_kopia .= "Typ wiadomości: " . ($typ) . "\n";
         $wiadomosc_kopia .= "Data wysłania: " . date('d.m.Y H:i:s') . "\n\n";
         $wiadomosc_kopia .= "Treść Twojej wiadomości:\n";
-        $wiadomosc_kopia .= htmlspecialchars($tresc) . "\n\n";
+        $wiadomosc_kopia .= ($tresc) . "\n\n";
         $wiadomosc_kopia .= "---\n";
         $wiadomosc_kopia .= "Biblioteka Szkoły - Wesoła Szkoła\n";
         $wiadomosc_kopia .= LIBRARY_ADDRESS . "\n";
@@ -139,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="imie">Imię *</label>
                 <input type="text" id="imie" name="imie" 
                        placeholder="Wpisz swoje imię"
-                       value="<?php echo htmlspecialchars($_POST['imie'] ?? ''); ?>"
+                       value="<?php echo ($_POST['imie'] ?? ''); ?>"
                        required>
             </div>
 
@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="nazwisko">Nazwisko *</label>
                 <input type="text" id="nazwisko" name="nazwisko" 
                        placeholder="Wpisz swoje nazwisko"
-                       value="<?php echo htmlspecialchars($_POST['nazwisko'] ?? ''); ?>"
+                       value="<?php echo ($_POST['nazwisko'] ?? ''); ?>"
                        required>
             </div>
         </div>
@@ -156,7 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="email">E-mail *</label>
             <input type="email" id="email" name="email" 
                    placeholder="Wpisz swój adres e-mail"
-                   value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>"
+                   value="<?php echo ($_POST['email'] ?? ''); ?>"
                    required>
         </div>
 
@@ -165,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <textarea id="tresc" name="tresc" 
                       placeholder="Wpisz treść swojej wiadomości"
                       minlength="10"
-                      required><?php echo htmlspecialchars($_POST['tresc'] ?? ''); ?></textarea>
+                      required><?php echo ($_POST['tresc'] ?? ''); ?></textarea>
         </div>
 
         <div class="form-group">

@@ -88,14 +88,14 @@ if ($subaction === 'edit' && $id > 0) {
                 <div class="form-group">
                     <label for="tytul">Tytuł *</label>
                     <input type="text" id="tytul" name="tytul" 
-                           value="<?php echo htmlspecialchars($bookToEdit['tytul'] ?? ''); ?>"
+                           value="<?php echo ($bookToEdit['tytul'] ?? ''); ?>"
                            required>
                 </div>
 
                 <div class="form-group">
                     <label for="autor">Autor *</label>
                     <input type="text" id="autor" name="autor" 
-                           value="<?php echo htmlspecialchars($bookToEdit['autor'] ?? ''); ?>"
+                           value="<?php echo ($bookToEdit['autor'] ?? ''); ?>"
                            required>
                 </div>
             </div>
@@ -104,14 +104,14 @@ if ($subaction === 'edit' && $id > 0) {
                 <div class="form-group">
                     <label for="wydawnictwo">Wydawnictwo</label>
                     <input type="text" id="wydawnictwo" name="wydawnictwo" 
-                           value="<?php echo htmlspecialchars($bookToEdit['wydawnictwo'] ?? ''); ?>">
+                           value="<?php echo ($bookToEdit['wydawnictwo'] ?? ''); ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="rok_wydania">Rok wydania</label>
                     <input type="number" id="rok_wydania" name="rok_wydania" 
                            min="1900" max="2100"
-                           value="<?php echo htmlspecialchars($bookToEdit['rok_wydania'] ?? ''); ?>">
+                           value="<?php echo ($bookToEdit['rok_wydania'] ?? ''); ?>">
                 </div>
             </div>
 
@@ -119,19 +119,19 @@ if ($subaction === 'edit' && $id > 0) {
                 <div class="form-group">
                     <label for="isbn">ISBN</label>
                     <input type="text" id="isbn" name="isbn" 
-                           value="<?php echo htmlspecialchars($bookToEdit['isbn'] ?? ''); ?>">
+                           value="<?php echo ($bookToEdit['isbn'] ?? ''); ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="ilosc_kopii">Liczba kopii</label>
                     <input type="number" id="ilosc_kopii" name="ilosc_kopii" 
-                           min="1" value="<?php echo htmlspecialchars($bookToEdit['ilosc_kopii'] ?? 1); ?>">
+                           min="1" value="<?php echo ($bookToEdit['ilosc_kopii'] ?? 1); ?>">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="uwagi">Uwagi</label>
-                <textarea id="uwagi" name="uwagi"><?php echo htmlspecialchars($bookToEdit['uwagi'] ?? ''); ?></textarea>
+                <textarea id="uwagi" name="uwagi"><?php echo ($bookToEdit['uwagi'] ?? ''); ?></textarea>
             </div>
 
             <div class="form-group">
@@ -182,11 +182,11 @@ if ($subaction === 'edit' && $id > 0) {
                         while ($book = $booksResult->fetch_assoc()):
                 ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($book['tytul']); ?></td>
-                        <td><?php echo htmlspecialchars($book['autor']); ?></td>
-                        <td><?php echo htmlspecialchars($book['wydawnictwo'] ?? '-'); ?></td>
+                        <td><?php echo ($book['tytul']); ?></td>
+                        <td><?php echo ($book['autor']); ?></td>
+                        <td><?php echo ($book['wydawnictwo'] ?? '-'); ?></td>
                         <td><?php echo $book['rok_wydania'] ?? '-'; ?></td>
-                        <td><?php echo htmlspecialchars($book['isbn'] ?? '-'); ?></td>
+                        <td><?php echo ($book['isbn'] ?? '-'); ?></td>
                         <td><?php echo $book['ilosc_kopii']; ?></td>
                         <td>
                             <?php echo $book['aktywna'] ? '<span style="color: green;"><i class="fas fa-check"></i> Aktywna</span>' : '<span style="color: red;"><i class="fas fa-ban"></i> Nieaktywna</span>'; ?>
